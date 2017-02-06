@@ -396,7 +396,7 @@ public static void ent(String[] args) {
 		
 		JLabel icon = new JLabel("");
 		icon.setBounds(6, 6, 728, 308);
-		path="./Resource/Map.jpg";
+		path="./Resources/Map.jpg";
 		ImageIcon myimage = new ImageIcon (path);
 		Image img = myimage.getImage();
 		Image newImg = img.getScaledInstance(icon.getWidth(), icon.getHeight(), Image.SCALE_SMOOTH);
