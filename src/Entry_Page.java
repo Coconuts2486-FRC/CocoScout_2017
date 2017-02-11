@@ -9,6 +9,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JRadioButton;
 import java.awt.Color;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
 
 public class Entry_Page {
@@ -87,30 +90,41 @@ public static void ent(String[] args) {
 	static JLabel lblGearPickup_1;
 	static JLabel lblGearPlacement;
 	static JButton btnUpdate;
-	private JTextField Acc;
-	private JTextField Cc;
-	private JTextField Nts;
+	static JTextField Acc;
+	static JTextField Cc;
+	static JTextField Nts;
+	static JTextField H_Amount;
+	static JTextField L_Amount;
+	static JTextField Timer_Time;
 	public Entry_Page() {initialize();}
 
 	private void initialize() {
-		
+	Data dat = new Data();	
 		
 		
 		frame = new JFrame();
 		frame.setResizable(false);
 		frame.setAlwaysOnTop(true);
-		frame.setBounds(100, 100, 770, 598);
+		frame.setBounds(100, 100, 770, 639);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		
 		Gear_Placement_Add_Left = new JButton("+");
+		Gear_Placement_Add_Left.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Gear_Placement.setText(Integer.toString(Integer.parseInt(Gear_Placement.getText())+1));
+			}
+		});
 		Gear_Placement_Add_Left.setBounds(188, 184, 48, 29);
 		frame.getContentPane().add(Gear_Placement_Add_Left);
 		
 		Gear_Placement_Subtract_Left = new JButton("-");
 		Gear_Placement_Subtract_Left.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			
+				Gear_Placement.setText(Integer.toString(Integer.parseInt(Gear_Placement.getText())-1));
+			
 			}
 		});
 		Gear_Placement_Subtract_Left.setBounds(224, 184, 48, 29);
@@ -119,10 +133,20 @@ public static void ent(String[] args) {
 		
 		
 		Low_Goal_Add_Left = new JButton("+");
+		Low_Goal_Add_Left.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				L_Amount.setText(Integer.toString(Integer.parseInt(L_Amount.getText())+1));
+			}
+		});
 		Low_Goal_Add_Left.setBounds(85, 271, 48, 29);
 		frame.getContentPane().add(Low_Goal_Add_Left);
 		
 		Low_Goal_Subtract_Left = new JButton("-");
+		Low_Goal_Subtract_Left.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				L_Amount.setText(Integer.toString(Integer.parseInt(L_Amount.getText())-1));
+			}
+		});
 		Low_Goal_Subtract_Left.setBounds(124, 271, 48, 29);
 		frame.getContentPane().add(Low_Goal_Subtract_Left);
 		
@@ -130,6 +154,8 @@ public static void ent(String[] args) {
 		Gear_Pickup_Add_Left = new JButton("+");
 		Gear_Pickup_Add_Left.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+			Gear_Input.setText(Integer.toString(Integer.parseInt(Gear_Input.getText())+1));
 			
 			}
 		});
@@ -137,50 +163,101 @@ public static void ent(String[] args) {
 		frame.getContentPane().add(Gear_Pickup_Add_Left);
 		
 		Gear_Pickup_Subtract_Left = new JButton("-");
+		Gear_Pickup_Subtract_Left.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Gear_Input.setText(Integer.toString(Integer.parseInt(Gear_Input.getText())-1));
+			}
+		});
 		Gear_Pickup_Subtract_Left.setBounds(124, 75, 48, 29);
 		frame.getContentPane().add(Gear_Pickup_Subtract_Left);
 		
 		Low_Goal_Subtract_Right = new JButton("-");
+		Low_Goal_Subtract_Right.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				L_Amount.setText(Integer.toString(Integer.parseInt(L_Amount.getText())-1));
+			}
+		});
 		Low_Goal_Subtract_Right.setBounds(609, 271, 48, 29);
 		frame.getContentPane().add(Low_Goal_Subtract_Right);
 		
 		Low_Goal_Add_Right = new JButton("+");
+		Low_Goal_Add_Right.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				L_Amount.setText(Integer.toString(Integer.parseInt(L_Amount.getText())+1));
+			}
+		});
 		Low_Goal_Add_Right.setBounds(570, 271, 48, 29);
 		frame.getContentPane().add(Low_Goal_Add_Right);
 		
 		Gear_Placement_Add_Right = new JButton("+");
+		Gear_Placement_Add_Right.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Gear_Placement.setText(Integer.toString(Integer.parseInt(Gear_Placement.getText())+1));
+			}
+		});
 		Gear_Placement_Add_Right.setBounds(466, 184, 48, 29);
 		frame.getContentPane().add(Gear_Placement_Add_Right);
 		
 		Gear_Placement_Subtract_Right = new JButton("-");
+		Gear_Placement_Subtract_Right.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Gear_Placement.setText(Integer.toString(Integer.parseInt(Gear_Placement.getText())-1));
+			}
+		});
 		Gear_Placement_Subtract_Right.setBounds(501, 184, 48, 29);
 		frame.getContentPane().add(Gear_Placement_Subtract_Right);
 		
 		Gear_Pickup_Left_Right = new JButton("-");
+		Gear_Pickup_Left_Right.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Gear_Input.setText(Integer.toString(Integer.parseInt(Gear_Input.getText())-1));
+			}
+		});
 		Gear_Pickup_Left_Right.setBounds(609, 75, 48, 29);
 		frame.getContentPane().add(Gear_Pickup_Left_Right);
 		
 		Gear_Pickup_Add_Right = new JButton("+");
+		Gear_Pickup_Add_Right.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Gear_Input.setText(Integer.toString(Integer.parseInt(Gear_Input.getText())+1));
+			}
+		});
 		Gear_Pickup_Add_Right.setBounds(570, 75, 48, 29);
 		frame.getContentPane().add(Gear_Pickup_Add_Right);
 		
 		High_Goal_Add_Left = new JButton("+");
+		High_Goal_Add_Left.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				H_Amount.setText(Integer.toString(Integer.parseInt(H_Amount.getText())+1));
+			}
+		});
 		High_Goal_Add_Left.setBounds(85, 246, 48, 29);
 		frame.getContentPane().add(High_Goal_Add_Left);
 		
 		High_Goal_Subtract_Left = new JButton("-");
+		High_Goal_Subtract_Left.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				H_Amount.setText(Integer.toString(Integer.parseInt(H_Amount.getText())-1));
+			}
+		});
 		High_Goal_Subtract_Left.setBounds(124, 246, 48, 29);
 		frame.getContentPane().add(High_Goal_Subtract_Left);
 		
 		High_Goal_Subtract_Right = new JButton("-");
 		High_Goal_Subtract_Right.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				H_Amount.setText(Integer.toString(Integer.parseInt(H_Amount.getText())-1));
 			}
 		});
 		High_Goal_Subtract_Right.setBounds(609, 246, 48, 29);
 		frame.getContentPane().add(High_Goal_Subtract_Right);
 		
 		High_Goal_Add_Right = new JButton("+");
+		High_Goal_Add_Right.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				H_Amount.setText(Integer.toString(Integer.parseInt(H_Amount.getText())+1));
+			}
+		});
 		High_Goal_Add_Right.setBounds(570, 246, 48, 29);
 		frame.getContentPane().add(High_Goal_Add_Right);
 		
@@ -238,29 +315,29 @@ public static void ent(String[] args) {
 		L_Speed.setColumns(10);
 		
 		JLabel lblGearInput = new JLabel("Gear Input:");
-		lblGearInput.setBounds(6, 478, 74, 16);
+		lblGearInput.setBounds(6, 528, 74, 16);
 		frame.getContentPane().add(lblGearInput);
 		
 		Gear_Input = new JTextField();
-		Gear_Input.setBounds(120, 478, 130, 26);
+		Gear_Input.setBounds(120, 528, 130, 26);
 		frame.getContentPane().add(Gear_Input);
 		Gear_Input.setColumns(10);
 		
 		JLabel lblGearPla = new JLabel("Gear Placement:");
-		lblGearPla.setBounds(6, 506, 100, 16);
+		lblGearPla.setBounds(6, 556, 100, 16);
 		frame.getContentPane().add(lblGearPla);
 		
 		Gear_Placement = new JTextField();
-		Gear_Placement.setBounds(120, 506, 130, 26);
+		Gear_Placement.setBounds(120, 556, 130, 26);
 		frame.getContentPane().add(Gear_Placement);
 		Gear_Placement.setColumns(10);
 		
 		JRadioButton rdbtnCollectedFromHoppers = new JRadioButton("Collected From Hoppers");
-		rdbtnCollectedFromHoppers.setBounds(277, 506, 184, 23);
+		rdbtnCollectedFromHoppers.setBounds(277, 556, 184, 23);
 		frame.getContentPane().add(rdbtnCollectedFromHoppers);
 		
 		JRadioButton rdbtnCollectedFromGround = new JRadioButton("Collected From Ground");
-		rdbtnCollectedFromGround.setBounds(277, 478, 177, 23);
+		rdbtnCollectedFromGround.setBounds(277, 528, 177, 23);
 		frame.getContentPane().add(rdbtnCollectedFromGround);
 		
 		JLabel lblTeam = new JLabel("Team #:");
@@ -290,16 +367,16 @@ public static void ent(String[] args) {
 		frame.getContentPane().add(lblSpeed);
 		
 		lblAccuracy = new JLabel("Accuracy:");
-		lblAccuracy.setBounds(6, 396, 66, 16);
+		lblAccuracy.setBounds(6, 395, 66, 16);
 		frame.getContentPane().add(lblAccuracy);
 		
 		H_Accuracy = new JTextField();
-		H_Accuracy.setBounds(120, 396, 130, 26);
+		H_Accuracy.setBounds(120, 395, 130, 26);
 		frame.getContentPane().add(H_Accuracy);
 		H_Accuracy.setColumns(10);
 		
 		lblC = new JLabel("Carrying Capacity:");
-		lblC.setBounds(511, 506, 115, 16);
+		lblC.setBounds(511, 556, 115, 16);
 		frame.getContentPane().add(lblC);
 		
 		lblSpeed_1 = new JLabel("Speed:");
@@ -311,12 +388,12 @@ public static void ent(String[] args) {
 		frame.getContentPane().add(lblAccuracy_1);
 		
 		L_Accuracy = new JTextField();
-		L_Accuracy.setBounds(356, 396, 130, 26);
+		L_Accuracy.setBounds(356, 395, 130, 26);
 		frame.getContentPane().add(L_Accuracy);
 		L_Accuracy.setColumns(10);
 		
 		lblRotors = new JLabel("Rotors:");
-		lblRotors.setBounds(6, 450, 61, 16);
+		lblRotors.setBounds(6, 500, 61, 16);
 		frame.getContentPane().add(lblRotors);
 		
 		lblMatchInfo = new JLabel("Match Info:");
@@ -324,19 +401,19 @@ public static void ent(String[] args) {
 		frame.getContentPane().add(lblMatchInfo);
 		
 		lblCollection = new JLabel("Collection:");
-		lblCollection.setBounds(283, 450, 74, 16);
+		lblCollection.setBounds(283, 500, 74, 16);
 		frame.getContentPane().add(lblCollection);
 		
 		lblCollection_1 = new JLabel("Collection:");
-		lblCollection_1.setBounds(511, 450, 74, 16);
+		lblCollection_1.setBounds(511, 500, 74, 16);
 		frame.getContentPane().add(lblCollection_1);
 		
 		lblAccuracy_2 = new JLabel("Accuracy:");
-		lblAccuracy_2.setBounds(511, 478, 61, 16);
+		lblAccuracy_2.setBounds(511, 528, 61, 16);
 		frame.getContentPane().add(lblAccuracy_2);
 		
 		lblNotes_1 = new JLabel("Notes:");
-		lblNotes_1.setBounds(6, 549, 61, 16);
+		lblNotes_1.setBounds(6, 587, 61, 16);
 		frame.getContentPane().add(lblNotes_1);
 		
 		Upload = new JButton("Upload");
@@ -408,135 +485,191 @@ public static void ent(String[] args) {
 		Info.setBounds(537, 311, 117, 29);
 		frame.getContentPane().add(Info);
 		
+		Thread data123 = new Thread(){
+			public void run(){
+				Data data = new Data();
+				while(true){
+				try{
+				//input ---------------------------------------------------------------
+				data.H_Speed = Double.parseDouble(H_Speed.getText());
+				data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
+
+				data.L_Speed = Double.parseDouble(L_Speed.getText());
+				data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
+				
+				data.Team_Number = Integer.parseInt(Team.getText());
+				data.Match_Number = Integer.parseInt(Match.getText());
+				
+				data.G_Input = Integer.parseInt(Gear_Input.getText());
+				data.G_Placement = Integer.parseInt(Gear_Placement.getText());
+				
+				data.H_Amount = Integer.parseInt(H_Amount.getText());
+				data.L_Amount = Integer.parseInt(L_Amount.getText());
+				
+				data.C_Accuracy = Double.parseDouble(Acc.getText());
+				data.C_Carry = Double.parseDouble(Cc.getText());
+				
+				data.Hopper1 = Collect_Top_Left.isSelected();
+				data.Hopper2 = Collect_Top_Right.isSelected();
+				data.Hopper3 = Collect_Bottom_Left.isSelected();
+				data.Hopper4 = Collect_Bottom_Middle.isSelected();
+				data.Hopper5 = Collect_Bottom_Right.isSelected();
+				
+				data.C_Ground  = rdbtnCollectedFromGround.isSelected();
+				data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
+				
+				data.Note = Nts.getText();
+				
+				}catch(Exception e){System.out.println(e);}
+				
+				//Output -------------------------------------------------
+			
+				H_Speed.setText(Double.toString(data.H_Speed));
+				H_Accuracy.setText(Double.toString(data.H_Accuracy));
+				
+				L_Speed.setText(Double.toString(data.L_Speed));
+				L_Accuracy.setText(Double.toString(data.L_Accuracy));
+				
+				Team.setText(Integer.toString(data.Team_Number));
+				Match.setText(Integer.toString(data.Match_Number));
+				
+				Gear_Input.setText(Integer.toString(data.G_Input));
+				Gear_Placement.setText(Integer.toString(data.G_Placement));
+				
+				Acc.setText(Double.toString(data.C_Accuracy));
+				Cc.setText(Double.toString(data.C_Carry));
+				
+				H_Amount.setText(Integer.toString(data.H_Amount));
+				L_Amount.setText(Integer.toString(data.L_Amount));
+				
+				Collect_Top_Right.setSelected(data.Hopper1);
+				Collect_Top_Left.setSelected(data.Hopper2);
+				Collect_Bottom_Left.setSelected(data.Hopper3);
+				Collect_Bottom_Middle.setSelected(data.Hopper4);
+				Collect_Bottom_Right.setSelected(data.Hopper5);
+				
+				rdbtnCollectedFromGround.setSelected(data.C_Ground);
+				rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
+				
+				Nts.setText(data.Note);
+				
+				
+				
+				Timer_Time.setText("10");
+				
+				try {Thread.sleep(1000);} 
+				catch (InterruptedException e1) {}
+				Timer_Time.setText("9");
+				
+				try {Thread.sleep(1000);} 
+				catch (InterruptedException e1) {}
+				Timer_Time.setText("8");
+				
+				try {Thread.sleep(1000);} 
+				catch (InterruptedException e1) {}
+				Timer_Time.setText("7");
+				
+				try {Thread.sleep(1000);} 
+				catch (InterruptedException e1) {}
+				Timer_Time.setText("6");
+				
+				try {Thread.sleep(1000);} 
+				catch (InterruptedException e1) {}
+				Timer_Time.setText("5");
+				
+				try {Thread.sleep(1000);} 
+				catch (InterruptedException e1) {}
+				Timer_Time.setText("4");
+				
+				try {Thread.sleep(1000);} 
+				catch (InterruptedException e1) {}
+				Timer_Time.setText("3");
+				
+				try {Thread.sleep(1000);} 
+				catch (InterruptedException e1) {}
+				Timer_Time.setText("2");
+				
+				try {Thread.sleep(1000);} 
+				catch (InterruptedException e1) {}
+				Timer_Time.setText("1");
+				
+				try {Thread.sleep(1000);} 
+				catch (InterruptedException e1) {}
+				}
+			
+				
+				
+
+			
+			
+				}};
+		
 		btnUpdate = new JButton("Update");
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Data data = new Data();
+				data123.start();
 				
-				Thread data123 = new Thread(){
-				public void run(){
-					
-					while(true){
-					try{
-					//input ---------------------------------------------------------------
-					data.H_Speed = Double.parseDouble(H_Speed.getText());
-					data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
-
-					data.L_Speed = Double.parseDouble(L_Speed.getText());
-					data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
-					
-					data.Team_Number = Integer.parseInt(Team.getText());
-					data.Match_Number = Integer.parseInt(Match.getText());
-					
-					data.G_Input = Integer.parseInt(Gear_Input.getText());
-					data.G_Placement = Integer.parseInt(Gear_Placement.getText());
-					
-					data.C_Accuracy = Double.parseDouble(Acc.getText());
-					data.C_Carry = Double.parseDouble(Cc.getText());
-					
-					data.Hopper1 = Collect_Top_Left.isSelected();
-					data.Hopper2 = Collect_Top_Right.isSelected();
-					data.Hopper3 = Collect_Bottom_Left.isSelected();
-					data.Hopper4 = Collect_Bottom_Middle.isSelected();
-					data.Hopper5 = Collect_Bottom_Right.isSelected();
-					
-					data.C_Ground  = rdbtnCollectedFromGround.isSelected();
-					data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
-					
-					data.Note = Nts.getText();
-					
-					System.out.println(1);
-					try {Thread.sleep(1000);} 
-					catch (InterruptedException e1) {System.out.println(e1.getMessage());}
-					}catch(Exception e){System.out.println(e);}
-					//Output -------------------------------------------------
-				
-					H_Speed.setText(Double.toString(data.H_Speed));
-					H_Accuracy.setText(Double.toString(data.H_Accuracy));
-					
-					L_Speed.setText(Double.toString(data.L_Speed));
-					L_Accuracy.setText(Double.toString(data.L_Accuracy));
-					
-					Team.setText(Integer.toString(data.Team_Number));
-					Match.setText(Integer.toString(data.Match_Number));
-					
-					Gear_Input.setText(Integer.toString(data.G_Input));
-					Gear_Placement.setText(Integer.toString(data.G_Placement));
-					
-					Acc.setText(Double.toString(data.C_Accuracy));
-					Cc.setText(Double.toString(data.C_Carry));
-					
-					Collect_Top_Right.setSelected(data.Hopper1);
-					Collect_Top_Left.setSelected(data.Hopper2);
-					Collect_Bottom_Left.setSelected(data.Hopper3);
-					Collect_Bottom_Middle.setSelected(data.Hopper4);
-					Collect_Bottom_Right.setSelected(data.Hopper5);
-					
-					rdbtnCollectedFromGround.setSelected(data.C_Ground);
-					rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
-					
-					Nts.setText(data.Note);
-					
-					
-					System.out.println(9);
-					try {Thread.sleep(1000);} 
-					catch (InterruptedException e1) {System.out.println(e1.getMessage());}
-					System.out.println(8);
-					try {Thread.sleep(1000);} 
-					catch (InterruptedException e1) {System.out.println(e1.getMessage());}
-					System.out.println(7);
-					try {Thread.sleep(1000);} 
-					catch (InterruptedException e1) {System.out.println(e1.getMessage());}
-					System.out.println(6);
-					try {Thread.sleep(1000);} 
-					catch (InterruptedException e1) {System.out.println(e1.getMessage());}
-					System.out.println(5);
-					try {Thread.sleep(1000);} 
-					catch (InterruptedException e1) {System.out.println(e1.getMessage());}
-					System.out.println(4);
-					try {Thread.sleep(1000);} 
-					catch (InterruptedException e1) {System.out.println(e1.getMessage());}
-					System.out.println(3);
-					try {Thread.sleep(1000);} 
-					catch (InterruptedException e1) {System.out.println(e1.getMessage());}
-					System.out.println(2);
-					try {Thread.sleep(1000);} 
-					catch (InterruptedException e1) {System.out.println(e1.getMessage());}
-					
-					System.out.println("Yep Yep!!!");
-					
-					
-					}
-					
-					
-
-				
-				
-					}};
-				
-			data123.start();
-
-			
-			}
-		});
+				}});
 		btnUpdate.setBounds(427, 311, 117, 29);
 		frame.getContentPane().add(btnUpdate);
 		
+		
 		Acc = new JTextField();
-		Acc.setBounds(634, 473, 130, 26);
+		Acc.setBounds(634, 528, 130, 26);
 		frame.getContentPane().add(Acc);
 		Acc.setColumns(10);
 		
 		Cc = new JTextField();
-		Cc.setBounds(634, 501, 130, 26);
+		Cc.setBounds(634, 556, 130, 26);
 		frame.getContentPane().add(Cc);
 		Cc.setColumns(10);
 		
 		Nts = new JTextField();
-		Nts.setBounds(124, 544, 640, 26);
+		Nts.setBounds(120, 587, 645, 26);
 		frame.getContentPane().add(Nts);
 		Nts.setColumns(10);
+		
+		JLabel lblAmount = new JLabel("Amount:");
+		lblAmount.setBounds(6, 424, 61, 16);
+		frame.getContentPane().add(lblAmount);
+		
+		H_Amount = new JTextField();
+		H_Amount.setBounds(120, 419, 130, 26);
+		frame.getContentPane().add(H_Amount);
+		H_Amount.setColumns(10);
+		
+		JLabel lblAmount_1 = new JLabel("Amount:");
+		lblAmount_1.setBounds(283, 424, 61, 16);
+		frame.getContentPane().add(lblAmount_1);
+		
+		L_Amount = new JTextField();
+		L_Amount.setBounds(356, 419, 130, 26);
+		frame.getContentPane().add(L_Amount);
+		L_Amount.setColumns(10);
+		
+		JRadioButton rdbtnClimbedRope = new JRadioButton("Climbed Rope");
+		rdbtnClimbedRope.setBounds(277, 460, 141, 23);
+		frame.getContentPane().add(rdbtnClimbedRope);
+		
+		Timer_Time = new JTextField();
+		Timer_Time.setEditable(false);
+		Timer_Time.setBackground(UIManager.getColor("Button.background"));
+		Timer_Time.setHorizontalAlignment(SwingConstants.CENTER);
+		Timer_Time.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
+		Timer_Time.setBounds(6, 445, 50, 50);
+		frame.getContentPane().add(Timer_Time);
+		Timer_Time.setColumns(10);
+		
+		JButton btnClose = new JButton("Close");
+		btnClose.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				data123.stop();
+				frame.dispose();
+			}
+		});
+		btnClose.setBounds(317, 311, 117, 29);
+		frame.getContentPane().add(btnClose);
 		
 		
 	}	

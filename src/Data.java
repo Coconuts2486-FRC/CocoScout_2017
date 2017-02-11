@@ -12,6 +12,9 @@ double L_Accuracy;
 int G_Input;
 int G_Placement;
 
+int H_Amount;
+int L_Amount;
+
 int Team_Number;
 int Match_Number;
 
