@@ -16,7 +16,9 @@ public class Entry_Page {
 private JFrame frame;
 
 public static void ent(String[] args) {
+	
 		EventQueue.invokeLater(new Runnable() {
+			
 		public void run() {
 		try {
 		Entry_Page window = new Entry_Page();
@@ -24,6 +26,7 @@ public static void ent(String[] args) {
 		} catch (Exception e) {
 		e.printStackTrace();
 		}
+		
 		}
 		});
 		}
@@ -31,55 +34,62 @@ public static void ent(String[] args) {
 
 
 	public static String path;
-	private JButton Gear_Placement_Add_Left;
-	private JButton Gear_Placement_Subtract_Left;
-	private JButton Low_Goal_Add_Left;
-	private JButton Low_Goal_Subtract_Left;
-	private JButton Gear_Pickup_Add_Left;
-	private JButton Gear_Pickup_Subtract_Left;
-	private JButton Low_Goal_Subtract_Right;
-	private JButton Low_Goal_Add_Right;
-	private JButton Gear_Placement_Add_Right;
-	private JButton Gear_Placement_Subtract_Right;
-	private JButton Gear_Pickup_Left_Right;
-	private JButton Gear_Pickup_Add_Right;
-	private JButton High_Goal_Add_Left;
-	private JButton High_Goal_Subtract_Left;
-	private JButton High_Goal_Subtract_Right;
-	private JButton High_Goal_Add_Right;
-	private JRadioButton Collect_Top_Right;
-	private JRadioButton Teleop;
-	private JRadioButton Autonomous;
-	private JTextField H_Speed;
-	private JTextField L_Speed;
-	private JTextField Gear_Input;
-	private JTextField Gear_Placement;
-	private JTextField Team;
-	private JTextField Match;
-	private JLabel lblSpeed;
-	private JLabel lblAccuracy;
-	private JTextField H_Accuracy;
-	private JLabel lblC;
-	private JTextField C_Carring_Capacity;
-	private JLabel lblSpeed_1;
-	private JLabel lblAccuracy_1;
-	private JTextField L_Accuracy;
-	private JLabel lblRotors;
-	private JLabel lblMatchInfo;
-	private JLabel lblCollection;
-	private JLabel lblCollection_1;
-	private JLabel lblAccuracy_2;
-	private JTextField C_Accuracy;
-	private JLabel lblNotes_1;
-	private JTextField Notes;
-	private JButton Upload;
-	private JLabel lblHighGoal_1;
-	private JLabel lblLowGoal_1;
-	private JLabel lblHighGoal_2;
-	private JLabel lblLowGoal_2;
-	private JLabel lblGearPickup;
-	private JLabel lblGearPickup_1;
-	private JLabel lblGearPlacement;
+	static JButton Gear_Placement_Add_Left;
+	static JButton Gear_Placement_Subtract_Left;
+	static JButton Low_Goal_Add_Left;
+	static JButton Low_Goal_Subtract_Left;
+	static JButton Gear_Pickup_Add_Left;
+	static JButton Gear_Pickup_Subtract_Left;
+	static JButton Low_Goal_Subtract_Right;
+	static JButton Low_Goal_Add_Right;
+	static JButton Gear_Placement_Add_Right;
+	static JButton Gear_Placement_Subtract_Right;
+	static JButton Gear_Pickup_Left_Right;
+	static JButton Gear_Pickup_Add_Right;
+	static JButton High_Goal_Add_Left;
+	static JButton High_Goal_Subtract_Left;
+	static JButton High_Goal_Subtract_Right;
+	static JButton High_Goal_Add_Right;
+	static JRadioButton Collect_Top_Right;
+	static JRadioButton Collect_Top_Left;
+	static JRadioButton Collect_Bottom_Right;
+	static JRadioButton Collect_Bottom_Middle;
+	static JRadioButton Collect_Bottom_Left;
+	static JRadioButton rdbtnCollectedFromGround;
+	static JRadioButton rdbtnCollectedFromHoppers;
+	static JRadioButton Teleop;
+	static JRadioButton Autonomous;
+	static JTextField H_Speed;
+	static JTextField L_Speed;
+	static JTextField Gear_Input;
+	static JTextField Gear_Placement;
+	static JTextField Team;
+	static JTextField Match;
+	static JLabel lblSpeed;
+	static JLabel lblAccuracy;
+	static JTextField H_Accuracy;
+	static JLabel lblC;
+	static JLabel lblSpeed_1;
+	static JLabel lblAccuracy_1;
+	static JTextField L_Accuracy;
+	static JLabel lblRotors;
+	static JLabel lblMatchInfo;
+	static JLabel lblCollection;
+	static JLabel lblCollection_1;
+	static JLabel lblAccuracy_2;
+	static JLabel lblNotes_1;
+	static JButton Upload;
+	static JLabel lblHighGoal_1;
+	static JLabel lblLowGoal_1;
+	static JLabel lblHighGoal_2;
+	static JLabel lblLowGoal_2;
+	static JLabel lblGearPickup;
+	static JLabel lblGearPickup_1;
+	static JLabel lblGearPlacement;
+	static JButton btnUpdate;
+	private JTextField Acc;
+	private JTextField Cc;
+	private JTextField Nts;
 	public Entry_Page() {initialize();}
 
 	private void initialize() {
@@ -292,11 +302,6 @@ public static void ent(String[] args) {
 		lblC.setBounds(511, 506, 115, 16);
 		frame.getContentPane().add(lblC);
 		
-		C_Carring_Capacity = new JTextField();
-		C_Carring_Capacity.setBounds(634, 506, 130, 26);
-		frame.getContentPane().add(C_Carring_Capacity);
-		C_Carring_Capacity.setColumns(10);
-		
 		lblSpeed_1 = new JLabel("Speed:");
 		lblSpeed_1.setBounds(283, 370, 48, 16);
 		frame.getContentPane().add(lblSpeed_1);
@@ -330,22 +335,12 @@ public static void ent(String[] args) {
 		lblAccuracy_2.setBounds(511, 478, 61, 16);
 		frame.getContentPane().add(lblAccuracy_2);
 		
-		C_Accuracy = new JTextField();
-		C_Accuracy.setBounds(634, 478, 130, 26);
-		frame.getContentPane().add(C_Accuracy);
-		C_Accuracy.setColumns(10);
-		
 		lblNotes_1 = new JLabel("Notes:");
 		lblNotes_1.setBounds(6, 549, 61, 16);
 		frame.getContentPane().add(lblNotes_1);
 		
-		Notes = new JTextField();
-		Notes.setBounds(120, 544, 644, 26);
-		frame.getContentPane().add(Notes);
-		Notes.setColumns(10);
-		
 		Upload = new JButton("Upload");
-		Upload.setBounds(653, 311, 117, 29);
+		Upload.setBounds(647, 311, 117, 29);
 		frame.getContentPane().add(Upload);
 		
 		lblHighGoal_1 = new JLabel("High Goal:");
@@ -405,48 +400,144 @@ public static void ent(String[] args) {
 		frame.getContentPane().add(icon);
 		
 		JButton Info = new JButton("Info");
-		Info.setBounds(540, 312, 117, 29);
+		Info.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("it worked!!!!!!!!!!");
+			}
+		});
+		Info.setBounds(537, 311, 117, 29);
 		frame.getContentPane().add(Info);
 		
-		Data data = new Data();
-		try{
+		btnUpdate = new JButton("Update");
+		btnUpdate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Data data = new Data();
+				
+				Thread data123 = new Thread(){
+				public void run(){
+					
+					while(true){
+					try{
+					//input ---------------------------------------------------------------
+					data.H_Speed = Double.parseDouble(H_Speed.getText());
+					data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
 
-		data.H_Speed = Double.parseDouble(H_Speed.getText());
-		data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
+					data.L_Speed = Double.parseDouble(L_Speed.getText());
+					data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
+					
+					data.Team_Number = Integer.parseInt(Team.getText());
+					data.Match_Number = Integer.parseInt(Match.getText());
+					
+					data.G_Input = Integer.parseInt(Gear_Input.getText());
+					data.G_Placement = Integer.parseInt(Gear_Placement.getText());
+					
+					data.C_Accuracy = Double.parseDouble(Acc.getText());
+					data.C_Carry = Double.parseDouble(Cc.getText());
+					
+					data.Hopper1 = Collect_Top_Left.isSelected();
+					data.Hopper2 = Collect_Top_Right.isSelected();
+					data.Hopper3 = Collect_Bottom_Left.isSelected();
+					data.Hopper4 = Collect_Bottom_Middle.isSelected();
+					data.Hopper5 = Collect_Bottom_Right.isSelected();
+					
+					data.C_Ground  = rdbtnCollectedFromGround.isSelected();
+					data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
+					
+					data.Note = Nts.getText();
+					
+					System.out.println(1);
+					try {Thread.sleep(1000);} 
+					catch (InterruptedException e1) {System.out.println(e1.getMessage());}
+					}catch(Exception e){System.out.println(e);}
+					//Output -------------------------------------------------
+				
+					H_Speed.setText(Double.toString(data.H_Speed));
+					H_Accuracy.setText(Double.toString(data.H_Accuracy));
+					
+					L_Speed.setText(Double.toString(data.L_Speed));
+					L_Accuracy.setText(Double.toString(data.L_Accuracy));
+					
+					Team.setText(Integer.toString(data.Team_Number));
+					Match.setText(Integer.toString(data.Match_Number));
+					
+					Gear_Input.setText(Integer.toString(data.G_Input));
+					Gear_Placement.setText(Integer.toString(data.G_Placement));
+					
+					Acc.setText(Double.toString(data.C_Accuracy));
+					Cc.setText(Double.toString(data.C_Carry));
+					
+					Collect_Top_Right.setSelected(data.Hopper1);
+					Collect_Top_Left.setSelected(data.Hopper2);
+					Collect_Bottom_Left.setSelected(data.Hopper3);
+					Collect_Bottom_Middle.setSelected(data.Hopper4);
+					Collect_Bottom_Right.setSelected(data.Hopper5);
+					
+					rdbtnCollectedFromGround.setSelected(data.C_Ground);
+					rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
+					
+					Nts.setText(data.Note);
+					
+					
+					System.out.println(9);
+					try {Thread.sleep(1000);} 
+					catch (InterruptedException e1) {System.out.println(e1.getMessage());}
+					System.out.println(8);
+					try {Thread.sleep(1000);} 
+					catch (InterruptedException e1) {System.out.println(e1.getMessage());}
+					System.out.println(7);
+					try {Thread.sleep(1000);} 
+					catch (InterruptedException e1) {System.out.println(e1.getMessage());}
+					System.out.println(6);
+					try {Thread.sleep(1000);} 
+					catch (InterruptedException e1) {System.out.println(e1.getMessage());}
+					System.out.println(5);
+					try {Thread.sleep(1000);} 
+					catch (InterruptedException e1) {System.out.println(e1.getMessage());}
+					System.out.println(4);
+					try {Thread.sleep(1000);} 
+					catch (InterruptedException e1) {System.out.println(e1.getMessage());}
+					System.out.println(3);
+					try {Thread.sleep(1000);} 
+					catch (InterruptedException e1) {System.out.println(e1.getMessage());}
+					System.out.println(2);
+					try {Thread.sleep(1000);} 
+					catch (InterruptedException e1) {System.out.println(e1.getMessage());}
+					
+					System.out.println("Yep Yep!!!");
+					
+					
+					}
+					
+					
 
-		data.L_Speed = Double.parseDouble(L_Speed.getText());
-		data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
+				
+				
+					}};
+				
+			data123.start();
+
+			
+			}
+		});
+		btnUpdate.setBounds(427, 311, 117, 29);
+		frame.getContentPane().add(btnUpdate);
 		
-		data.Team_Number = Integer.parseInt(Team.getText());
-		data.Match_Number = Integer.parseInt(Match.getText());
+		Acc = new JTextField();
+		Acc.setBounds(634, 473, 130, 26);
+		frame.getContentPane().add(Acc);
+		Acc.setColumns(10);
 		
-		data.G_Input = Integer.parseInt(Gear_Input.getText());
-		data.G_Placement = Integer.parseInt(Gear_Placement.getText());
+		Cc = new JTextField();
+		Cc.setBounds(634, 501, 130, 26);
+		frame.getContentPane().add(Cc);
+		Cc.setColumns(10);
 		
-		data.C_Accuracy = Double.parseDouble(C_Accuracy.getText());
-		data.C_Capacity = Integer.parseInt(C_Carring_Capacity.getText());
-		
-		data.Hopper1 = Collect_Top_Left.isSelected();
-		data.Hopper2 = Collect_Top_Right.isSelected();
-		data.Hopper3 = Collect_Bottom_Left.isSelected();
-		data.Hopper4 = Collect_Bottom_Middle.isSelected();
-		data.Hopper5 = Collect_Bottom_Right.isSelected();
-		
-		data.C_Ground  = rdbtnCollectedFromGround.isSelected();
-		data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
-		
-		data.Notes = Notes.getText();
-		
-		
-		
-		
-		H_Speed.setText(Double.toString(data.H_Speed));
-		H_Accuracy.setText(Double.toString(data.H_Accuracy));
+		Nts = new JTextField();
+		Nts.setBounds(124, 544, 640, 26);
+		frame.getContentPane().add(Nts);
+		Nts.setColumns(10);
 		
 		
-		
-		
-		} catch(java.lang.NumberFormatException e){
-		
-		}
-	}}
+	}	
+}
