@@ -1,4 +1,4 @@
-public class Data {
+public class Auto_Data {
 	
 double C_Accuracy;
 double C_Carry;	

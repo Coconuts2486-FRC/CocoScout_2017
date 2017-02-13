@@ -20,7 +20,7 @@ public class Login_Page {
 	/**
 	 * Launch the application.
 	 */
-	public void run() {
+	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
