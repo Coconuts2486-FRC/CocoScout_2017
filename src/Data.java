@@ -1,4 +1,4 @@
-public class Data {
+public class Data implements java.io.Serializable {
 	
 double C_Accuracy;
 double C_Carry;	
@@ -18,19 +18,19 @@ int L_Amount;
 int Team_Number;
 int Match_Number;
 
-boolean C_Ground;
-boolean C_Hoppers;
+boolean C_Ground = false;
+boolean C_Hoppers = false;
 
-boolean Rope;
-boolean G_Left;
-boolean G_Right;
-boolean G_Middle;
+boolean Rope = false;
+boolean G_Left = false;
+boolean G_Right = false;
+boolean G_Middle = false;
 
-boolean Hopper1; //top left
-boolean Hopper2; //top right
-boolean Hopper3; //bottom left
-boolean Hopper4; //bottom middle
-boolean Hopper5; //bottom right
+boolean Hopper1 = false; //top left
+boolean Hopper2 = false; //top right
+boolean Hopper3 = false; //bottom left
+boolean Hopper4 = false; //bottom middle
+boolean Hopper5 = false; //bottom right
 
 String Note;
 

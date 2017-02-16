@@ -12,6 +12,8 @@ public class Home_Page {
 
 	private JFrame frame;
 	private JTable table;
+	
+	public static Model_View_Stats modelViewStats = new Model_View_Stats();
 
 	/**
 	 * Launch the application.
