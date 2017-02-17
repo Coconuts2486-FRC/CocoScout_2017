@@ -17,7 +17,7 @@ public class Entry_Page {
 
 private JFrame frame;
 
-public static void ent(String[] args) {
+public static void main(String[] args) {
 	
 		EventQueue.invokeLater(new Runnable() {
 			
@@ -120,94 +120,7 @@ public static void ent(String[] args) {
 			public void actionPerformed(ActionEvent e) {
 				Gear_Placement.setText(Integer.toString(Integer.parseInt(Gear_Placement.getText())+1));
 				
-				Data data = new Data();
-				try{
-					
-					//input ---------------------------------------------------------------
-					data.H_Speed = Double.parseDouble(H_Speed.getText());
-					data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
-
-					data.L_Speed = Double.parseDouble(L_Speed.getText());
-					data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
-					
-					data.Team_Number = Integer.parseInt(Team.getText());
-					data.Match_Number = Integer.parseInt(Match.getText());
-					
-					data.G_Input = Integer.parseInt(Gear_Input.getText());
-					data.G_Placement = Integer.parseInt(Gear_Placement.getText());
-					
-					data.H_Amount = Integer.parseInt(H_Amount.getText());
-					data.L_Amount = Integer.parseInt(L_Amount.getText());
-					
-					data.C_Accuracy = Double.parseDouble(Acc.getText());
-					data.C_Carry = Double.parseDouble(Cc.getText());
-					
-					data.Hopper1 = Collect_Top_Left.isSelected();
-					data.Hopper2 = Collect_Top_Right.isSelected();
-					data.Hopper3 = Collect_Bottom_Left.isSelected();
-					data.Hopper4 = Collect_Bottom_Middle.isSelected();
-					data.Hopper5 = Collect_Bottom_Right.isSelected();
-					
-					data.C_Ground  = rdbtnCollectedFromGround.isSelected();
-					data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
-					
-					data.G_Left = rdbtnLeftGear.isSelected();
-					data.G_Right = rdbtnRightGear.isSelected();
-					data.G_Middle = rdbtnMiddleGear.isSelected();
-					
-					data.Rope = rdbtnClimbedRope.isSelected();
-					
-					data.Note = Nts.getText();
-					
-					}catch(Exception e1){System.out.println(e);}
-					
-					//Output -------------------------------------------------
-
-					H_Speed.setText(Double.toString(data.H_Speed));
-					H_Accuracy.setText(Double.toString(data.H_Accuracy));
-					
-					L_Speed.setText(Double.toString(data.L_Speed));
-					L_Accuracy.setText(Double.toString(data.L_Accuracy));
-					
-					Team.setText(Integer.toString(data.Team_Number));
-					Match.setText(Integer.toString(data.Match_Number));
-					
-					Gear_Input.setText(Integer.toString(data.G_Input));
-					Gear_Placement.setText(Integer.toString(data.G_Placement));
-					
-					Acc.setText(Double.toString(data.C_Accuracy));
-					Cc.setText(Double.toString(data.C_Carry));
-					
-					H_Amount.setText(Integer.toString(data.H_Amount));
-					L_Amount.setText(Integer.toString(data.L_Amount));
-					
-					Collect_Top_Right.setSelected(data.Hopper1);
-					Collect_Top_Left.setSelected(data.Hopper2);
-					Collect_Bottom_Left.setSelected(data.Hopper3);
-					Collect_Bottom_Middle.setSelected(data.Hopper4);
-					Collect_Bottom_Right.setSelected(data.Hopper5);
-					
-					rdbtnCollectedFromGround.setSelected(data.C_Ground);
-					rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
-					
-					rdbtnLeftGear.setSelected(data.G_Left);
-					rdbtnRightGear.setSelected(data.G_Right);
-					rdbtnMiddleGear.setSelected(data.G_Middle);
-					rdbtnClimbedRope.setSelected(data.Rope);
-					
-					System.out.println(data.G_Left);
-					System.out.println(data.G_Right);
-					System.out.println(data.G_Middle);
-					System.out.println(data.Hopper1);
-					System.out.println(data.Hopper2);
-					System.out.println(data.Hopper3);
-					System.out.println(data.Hopper4);
-					System.out.println(data.Hopper5);
-					System.out.println(data.Rope);
-					System.out.println("_-_-_-_-_-_-_-_-_-_-_-_");
-					
-					Nts.setText(data.Note);
-			}
+				}
 		});
 		Gear_Placement_Add_Left.setBounds(188, 184, 48, 29);
 		frame.getContentPane().add(Gear_Placement_Add_Left);
@@ -218,95 +131,7 @@ public static void ent(String[] args) {
 			
 				Gear_Placement.setText(Integer.toString(Integer.parseInt(Gear_Placement.getText())-1));
 				
-				Data data = new Data();
-				try{
-					
-					//input ---------------------------------------------------------------
-					data.H_Speed = Double.parseDouble(H_Speed.getText());
-					data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
-
-					data.L_Speed = Double.parseDouble(L_Speed.getText());
-					data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
-					
-					data.Team_Number = Integer.parseInt(Team.getText());
-					data.Match_Number = Integer.parseInt(Match.getText());
-					
-					data.G_Input = Integer.parseInt(Gear_Input.getText());
-					data.G_Placement = Integer.parseInt(Gear_Placement.getText());
-					
-					data.H_Amount = Integer.parseInt(H_Amount.getText());
-					data.L_Amount = Integer.parseInt(L_Amount.getText());
-					
-					data.C_Accuracy = Double.parseDouble(Acc.getText());
-					data.C_Carry = Double.parseDouble(Cc.getText());
-					
-					data.Hopper1 = Collect_Top_Left.isSelected();
-					data.Hopper2 = Collect_Top_Right.isSelected();
-					data.Hopper3 = Collect_Bottom_Left.isSelected();
-					data.Hopper4 = Collect_Bottom_Middle.isSelected();
-					data.Hopper5 = Collect_Bottom_Right.isSelected();
-					
-					data.C_Ground  = rdbtnCollectedFromGround.isSelected();
-					data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
-					
-					data.G_Left = rdbtnLeftGear.isSelected();
-					data.G_Right = rdbtnRightGear.isSelected();
-					data.G_Middle = rdbtnMiddleGear.isSelected();
-					
-					data.Rope = rdbtnClimbedRope.isSelected();
-					
-					data.Note = Nts.getText();
-					
-					}catch(Exception e1){System.out.println(e);}
-					
-					//Output -------------------------------------------------
-
-					H_Speed.setText(Double.toString(data.H_Speed));
-					H_Accuracy.setText(Double.toString(data.H_Accuracy));
-					
-					L_Speed.setText(Double.toString(data.L_Speed));
-					L_Accuracy.setText(Double.toString(data.L_Accuracy));
-					
-					Team.setText(Integer.toString(data.Team_Number));
-					Match.setText(Integer.toString(data.Match_Number));
-					
-					Gear_Input.setText(Integer.toString(data.G_Input));
-					Gear_Placement.setText(Integer.toString(data.G_Placement));
-					
-					Acc.setText(Double.toString(data.C_Accuracy));
-					Cc.setText(Double.toString(data.C_Carry));
-					
-					H_Amount.setText(Integer.toString(data.H_Amount));
-					L_Amount.setText(Integer.toString(data.L_Amount));
-					
-					Collect_Top_Right.setSelected(data.Hopper1);
-					Collect_Top_Left.setSelected(data.Hopper2);
-					Collect_Bottom_Left.setSelected(data.Hopper3);
-					Collect_Bottom_Middle.setSelected(data.Hopper4);
-					Collect_Bottom_Right.setSelected(data.Hopper5);
-					
-					rdbtnCollectedFromGround.setSelected(data.C_Ground);
-					rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
-					
-					rdbtnLeftGear.setSelected(data.G_Left);
-					rdbtnRightGear.setSelected(data.G_Right);
-					rdbtnMiddleGear.setSelected(data.G_Middle);
-					rdbtnClimbedRope.setSelected(data.Rope);
-					
-					System.out.println(data.G_Left);
-					System.out.println(data.G_Right);
-					System.out.println(data.G_Middle);
-					System.out.println(data.Hopper1);
-					System.out.println(data.Hopper2);
-					System.out.println(data.Hopper3);
-					System.out.println(data.Hopper4);
-					System.out.println(data.Hopper5);
-					System.out.println(data.Rope);
-					System.out.println("_-_-_-_-_-_-_-_-_-_-_-_");
-					
-					Nts.setText(data.Note);
-			
-			}
+				}
 		});
 		Gear_Placement_Subtract_Left.setBounds(224, 184, 48, 29);
 		frame.getContentPane().add(Gear_Placement_Subtract_Left);
@@ -316,8 +141,8 @@ public static void ent(String[] args) {
 		Low_Goal_Add_Left = new JButton("+");
 		Low_Goal_Add_Left.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//L_Amount.setText(Integer.toString(Integer.parseInt(L_Amount.getText())+1));
-				Serelization.main();
+				L_Amount.setText(Integer.toString(Integer.parseInt(L_Amount.getText())+1));
+				//Serelization.main();
 				
 		}});
 		
@@ -327,8 +152,8 @@ public static void ent(String[] args) {
 		Low_Goal_Subtract_Left = new JButton("-");
 		Low_Goal_Subtract_Left.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//L_Amount.setText(Integer.toString(Integer.parseInt(L_Amount.getText())-1));
-				Deserelization.main();
+				L_Amount.setText(Integer.toString(Integer.parseInt(L_Amount.getText())-1));
+				//Deserelization.main();
 			}
 		});
 		Low_Goal_Subtract_Left.setBounds(124, 271, 48, 29);
@@ -341,97 +166,8 @@ public static void ent(String[] args) {
 				
 			Gear_Input.setText(Integer.toString(Integer.parseInt(Gear_Input.getText())+1));
 			
-			Data data = new Data();
-			try{
-				
-				//input ---------------------------------------------------------------
-				data.H_Speed = Double.parseDouble(H_Speed.getText());
-				data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
-
-				data.L_Speed = Double.parseDouble(L_Speed.getText());
-				data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
-				
-				data.Team_Number = Integer.parseInt(Team.getText());
-				data.Match_Number = Integer.parseInt(Match.getText());
-				
-				data.G_Input = Integer.parseInt(Gear_Input.getText());
-				data.G_Placement = Integer.parseInt(Gear_Placement.getText());
-				
-				data.H_Amount = Integer.parseInt(H_Amount.getText());
-				data.L_Amount = Integer.parseInt(L_Amount.getText());
-				
-				data.C_Accuracy = Double.parseDouble(Acc.getText());
-				data.C_Carry = Double.parseDouble(Cc.getText());
-				
-				data.Hopper1 = Collect_Top_Left.isSelected();
-				data.Hopper2 = Collect_Top_Right.isSelected();
-				data.Hopper3 = Collect_Bottom_Left.isSelected();
-				data.Hopper4 = Collect_Bottom_Middle.isSelected();
-				data.Hopper5 = Collect_Bottom_Right.isSelected();
-				
-				data.C_Ground  = rdbtnCollectedFromGround.isSelected();
-				data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
-				
-				data.G_Left = rdbtnLeftGear.isSelected();
-				data.G_Right = rdbtnRightGear.isSelected();
-				data.G_Middle = rdbtnMiddleGear.isSelected();
-				
-				data.Rope = rdbtnClimbedRope.isSelected();
-				
-				data.Note = Nts.getText();
-				
-				}catch(Exception e1){System.out.println(e);}
-				
-				//Output -------------------------------------------------
-
-				H_Speed.setText(Double.toString(data.H_Speed));
-				H_Accuracy.setText(Double.toString(data.H_Accuracy));
-				
-				L_Speed.setText(Double.toString(data.L_Speed));
-				L_Accuracy.setText(Double.toString(data.L_Accuracy));
-				
-				Team.setText(Integer.toString(data.Team_Number));
-				Match.setText(Integer.toString(data.Match_Number));
-				
-				Gear_Input.setText(Integer.toString(data.G_Input));
-				Gear_Placement.setText(Integer.toString(data.G_Placement));
-				
-				Acc.setText(Double.toString(data.C_Accuracy));
-				Cc.setText(Double.toString(data.C_Carry));
-				
-				H_Amount.setText(Integer.toString(data.H_Amount));
-				L_Amount.setText(Integer.toString(data.L_Amount));
-				
-				Collect_Top_Right.setSelected(data.Hopper1);
-				Collect_Top_Left.setSelected(data.Hopper2);
-				Collect_Bottom_Left.setSelected(data.Hopper3);
-				Collect_Bottom_Middle.setSelected(data.Hopper4);
-				Collect_Bottom_Right.setSelected(data.Hopper5);
-				
-				rdbtnCollectedFromGround.setSelected(data.C_Ground);
-				rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
-				
-				rdbtnLeftGear.setSelected(data.G_Left);
-				rdbtnRightGear.setSelected(data.G_Right);
-				rdbtnMiddleGear.setSelected(data.G_Middle);
-				rdbtnClimbedRope.setSelected(data.Rope);
-				
-				System.out.println(data.G_Left);
-				System.out.println(data.G_Right);
-				System.out.println(data.G_Middle);
-				System.out.println(data.Hopper1);
-				System.out.println(data.Hopper2);
-				System.out.println(data.Hopper3);
-				System.out.println(data.Hopper4);
-				System.out.println(data.Hopper5);
-				System.out.println(data.Rope);
-				System.out.println("_-_-_-_-_-_-_-_-_-_-_-_");
-				
-				Nts.setText(data.Note);
-
 			
-			}
-		});
+			}});
 		Gear_Pickup_Add_Left.setBounds(85, 75, 48, 29);
 		frame.getContentPane().add(Gear_Pickup_Add_Left);
 		
@@ -440,95 +176,7 @@ public static void ent(String[] args) {
 			public void actionPerformed(ActionEvent e) {
 				Gear_Input.setText(Integer.toString(Integer.parseInt(Gear_Input.getText())-1));
 				
-				Data data = new Data();
-				try{
-					
-					//input ---------------------------------------------------------------
-					data.H_Speed = Double.parseDouble(H_Speed.getText());
-					data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
-
-					data.L_Speed = Double.parseDouble(L_Speed.getText());
-					data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
-					
-					data.Team_Number = Integer.parseInt(Team.getText());
-					data.Match_Number = Integer.parseInt(Match.getText());
-					
-					data.G_Input = Integer.parseInt(Gear_Input.getText());
-					data.G_Placement = Integer.parseInt(Gear_Placement.getText());
-					
-					data.H_Amount = Integer.parseInt(H_Amount.getText());
-					data.L_Amount = Integer.parseInt(L_Amount.getText());
-					
-					data.C_Accuracy = Double.parseDouble(Acc.getText());
-					data.C_Carry = Double.parseDouble(Cc.getText());
-					
-					data.Hopper1 = Collect_Top_Left.isSelected();
-					data.Hopper2 = Collect_Top_Right.isSelected();
-					data.Hopper3 = Collect_Bottom_Left.isSelected();
-					data.Hopper4 = Collect_Bottom_Middle.isSelected();
-					data.Hopper5 = Collect_Bottom_Right.isSelected();
-					
-					data.C_Ground  = rdbtnCollectedFromGround.isSelected();
-					data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
-					
-					data.G_Left = rdbtnLeftGear.isSelected();
-					data.G_Right = rdbtnRightGear.isSelected();
-					data.G_Middle = rdbtnMiddleGear.isSelected();
-					
-					data.Rope = rdbtnClimbedRope.isSelected();
-					
-					data.Note = Nts.getText();
-					
-					}catch(Exception e1){System.out.println(e);}
-					
-					//Output -------------------------------------------------
-
-					H_Speed.setText(Double.toString(data.H_Speed));
-					H_Accuracy.setText(Double.toString(data.H_Accuracy));
-					
-					L_Speed.setText(Double.toString(data.L_Speed));
-					L_Accuracy.setText(Double.toString(data.L_Accuracy));
-					
-					Team.setText(Integer.toString(data.Team_Number));
-					Match.setText(Integer.toString(data.Match_Number));
-					
-					Gear_Input.setText(Integer.toString(data.G_Input));
-					Gear_Placement.setText(Integer.toString(data.G_Placement));
-					
-					Acc.setText(Double.toString(data.C_Accuracy));
-					Cc.setText(Double.toString(data.C_Carry));
-					
-					H_Amount.setText(Integer.toString(data.H_Amount));
-					L_Amount.setText(Integer.toString(data.L_Amount));
-					
-					Collect_Top_Right.setSelected(data.Hopper1);
-					Collect_Top_Left.setSelected(data.Hopper2);
-					Collect_Bottom_Left.setSelected(data.Hopper3);
-					Collect_Bottom_Middle.setSelected(data.Hopper4);
-					Collect_Bottom_Right.setSelected(data.Hopper5);
-					
-					rdbtnCollectedFromGround.setSelected(data.C_Ground);
-					rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
-					
-					rdbtnLeftGear.setSelected(data.G_Left);
-					rdbtnRightGear.setSelected(data.G_Right);
-					rdbtnMiddleGear.setSelected(data.G_Middle);
-					rdbtnClimbedRope.setSelected(data.Rope);
-					
-					System.out.println(data.G_Left);
-					System.out.println(data.G_Right);
-					System.out.println(data.G_Middle);
-					System.out.println(data.Hopper1);
-					System.out.println(data.Hopper2);
-					System.out.println(data.Hopper3);
-					System.out.println(data.Hopper4);
-					System.out.println(data.Hopper5);
-					System.out.println(data.Rope);
-					System.out.println("_-_-_-_-_-_-_-_-_-_-_-_");
-					
-					Nts.setText(data.Note);
-
-			}
+				}
 		});
 		Gear_Pickup_Subtract_Left.setBounds(124, 75, 48, 29);
 		frame.getContentPane().add(Gear_Pickup_Subtract_Left);
@@ -538,94 +186,7 @@ public static void ent(String[] args) {
 			public void actionPerformed(ActionEvent e) {
 				L_Amount.setText(Integer.toString(Integer.parseInt(L_Amount.getText())-1));
 				
-				Data data = new Data();
-				try{
-					
-					//input ---------------------------------------------------------------
-					data.H_Speed = Double.parseDouble(H_Speed.getText());
-					data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
-
-					data.L_Speed = Double.parseDouble(L_Speed.getText());
-					data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
-					
-					data.Team_Number = Integer.parseInt(Team.getText());
-					data.Match_Number = Integer.parseInt(Match.getText());
-					
-					data.G_Input = Integer.parseInt(Gear_Input.getText());
-					data.G_Placement = Integer.parseInt(Gear_Placement.getText());
-					
-					data.H_Amount = Integer.parseInt(H_Amount.getText());
-					data.L_Amount = Integer.parseInt(L_Amount.getText());
-					
-					data.C_Accuracy = Double.parseDouble(Acc.getText());
-					data.C_Carry = Double.parseDouble(Cc.getText());
-					
-					data.Hopper1 = Collect_Top_Left.isSelected();
-					data.Hopper2 = Collect_Top_Right.isSelected();
-					data.Hopper3 = Collect_Bottom_Left.isSelected();
-					data.Hopper4 = Collect_Bottom_Middle.isSelected();
-					data.Hopper5 = Collect_Bottom_Right.isSelected();
-					
-					data.C_Ground  = rdbtnCollectedFromGround.isSelected();
-					data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
-					
-					data.G_Left = rdbtnLeftGear.isSelected();
-					data.G_Right = rdbtnRightGear.isSelected();
-					data.G_Middle = rdbtnMiddleGear.isSelected();
-					
-					data.Rope = rdbtnClimbedRope.isSelected();
-					
-					data.Note = Nts.getText();
-					
-					}catch(Exception e1){System.out.println(e);}
-					
-					//Output -------------------------------------------------
-
-					H_Speed.setText(Double.toString(data.H_Speed));
-					H_Accuracy.setText(Double.toString(data.H_Accuracy));
-					
-					L_Speed.setText(Double.toString(data.L_Speed));
-					L_Accuracy.setText(Double.toString(data.L_Accuracy));
-					
-					Team.setText(Integer.toString(data.Team_Number));
-					Match.setText(Integer.toString(data.Match_Number));
-					
-					Gear_Input.setText(Integer.toString(data.G_Input));
-					Gear_Placement.setText(Integer.toString(data.G_Placement));
-					
-					Acc.setText(Double.toString(data.C_Accuracy));
-					Cc.setText(Double.toString(data.C_Carry));
-					
-					H_Amount.setText(Integer.toString(data.H_Amount));
-					L_Amount.setText(Integer.toString(data.L_Amount));
-					
-					Collect_Top_Right.setSelected(data.Hopper1);
-					Collect_Top_Left.setSelected(data.Hopper2);
-					Collect_Bottom_Left.setSelected(data.Hopper3);
-					Collect_Bottom_Middle.setSelected(data.Hopper4);
-					Collect_Bottom_Right.setSelected(data.Hopper5);
-					
-					rdbtnCollectedFromGround.setSelected(data.C_Ground);
-					rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
-					
-					rdbtnLeftGear.setSelected(data.G_Left);
-					rdbtnRightGear.setSelected(data.G_Right);
-					rdbtnMiddleGear.setSelected(data.G_Middle);
-					rdbtnClimbedRope.setSelected(data.Rope);
-					
-					System.out.println(data.G_Left);
-					System.out.println(data.G_Right);
-					System.out.println(data.G_Middle);
-					System.out.println(data.Hopper1);
-					System.out.println(data.Hopper2);
-					System.out.println(data.Hopper3);
-					System.out.println(data.Hopper4);
-					System.out.println(data.Hopper5);
-					System.out.println(data.Rope);
-					System.out.println("_-_-_-_-_-_-_-_-_-_-_-_");
-					
-					Nts.setText(data.Note);
-			}
+				}
 		});
 		Low_Goal_Subtract_Right.setBounds(609, 271, 48, 29);
 		frame.getContentPane().add(Low_Goal_Subtract_Right);
@@ -635,94 +196,7 @@ public static void ent(String[] args) {
 			public void actionPerformed(ActionEvent e) {
 				L_Amount.setText(Integer.toString(Integer.parseInt(L_Amount.getText())+1));
 				
-				Data data = new Data();
-				try{
-					
-					//input ---------------------------------------------------------------
-					data.H_Speed = Double.parseDouble(H_Speed.getText());
-					data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
-
-					data.L_Speed = Double.parseDouble(L_Speed.getText());
-					data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
-					
-					data.Team_Number = Integer.parseInt(Team.getText());
-					data.Match_Number = Integer.parseInt(Match.getText());
-					
-					data.G_Input = Integer.parseInt(Gear_Input.getText());
-					data.G_Placement = Integer.parseInt(Gear_Placement.getText());
-					
-					data.H_Amount = Integer.parseInt(H_Amount.getText());
-					data.L_Amount = Integer.parseInt(L_Amount.getText());
-					
-					data.C_Accuracy = Double.parseDouble(Acc.getText());
-					data.C_Carry = Double.parseDouble(Cc.getText());
-					
-					data.Hopper1 = Collect_Top_Left.isSelected();
-					data.Hopper2 = Collect_Top_Right.isSelected();
-					data.Hopper3 = Collect_Bottom_Left.isSelected();
-					data.Hopper4 = Collect_Bottom_Middle.isSelected();
-					data.Hopper5 = Collect_Bottom_Right.isSelected();
-					
-					data.C_Ground  = rdbtnCollectedFromGround.isSelected();
-					data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
-					
-					data.G_Left = rdbtnLeftGear.isSelected();
-					data.G_Right = rdbtnRightGear.isSelected();
-					data.G_Middle = rdbtnMiddleGear.isSelected();
-					
-					data.Rope = rdbtnClimbedRope.isSelected();
-					
-					data.Note = Nts.getText();
-					
-					}catch(Exception e1){System.out.println(e);}
-					
-					//Output -------------------------------------------------
-
-					H_Speed.setText(Double.toString(data.H_Speed));
-					H_Accuracy.setText(Double.toString(data.H_Accuracy));
-					
-					L_Speed.setText(Double.toString(data.L_Speed));
-					L_Accuracy.setText(Double.toString(data.L_Accuracy));
-					
-					Team.setText(Integer.toString(data.Team_Number));
-					Match.setText(Integer.toString(data.Match_Number));
-					
-					Gear_Input.setText(Integer.toString(data.G_Input));
-					Gear_Placement.setText(Integer.toString(data.G_Placement));
-					
-					Acc.setText(Double.toString(data.C_Accuracy));
-					Cc.setText(Double.toString(data.C_Carry));
-					
-					H_Amount.setText(Integer.toString(data.H_Amount));
-					L_Amount.setText(Integer.toString(data.L_Amount));
-					
-					Collect_Top_Right.setSelected(data.Hopper1);
-					Collect_Top_Left.setSelected(data.Hopper2);
-					Collect_Bottom_Left.setSelected(data.Hopper3);
-					Collect_Bottom_Middle.setSelected(data.Hopper4);
-					Collect_Bottom_Right.setSelected(data.Hopper5);
-					
-					rdbtnCollectedFromGround.setSelected(data.C_Ground);
-					rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
-					
-					rdbtnLeftGear.setSelected(data.G_Left);
-					rdbtnRightGear.setSelected(data.G_Right);
-					rdbtnMiddleGear.setSelected(data.G_Middle);
-					rdbtnClimbedRope.setSelected(data.Rope);
-					
-					System.out.println(data.G_Left);
-					System.out.println(data.G_Right);
-					System.out.println(data.G_Middle);
-					System.out.println(data.Hopper1);
-					System.out.println(data.Hopper2);
-					System.out.println(data.Hopper3);
-					System.out.println(data.Hopper4);
-					System.out.println(data.Hopper5);
-					System.out.println(data.Rope);
-					System.out.println("_-_-_-_-_-_-_-_-_-_-_-_");
-					
-					Nts.setText(data.Note);
-			}
+				}
 		});
 		Low_Goal_Add_Right.setBounds(570, 271, 48, 29);
 		frame.getContentPane().add(Low_Goal_Add_Right);
@@ -732,94 +206,7 @@ public static void ent(String[] args) {
 			public void actionPerformed(ActionEvent e) {
 				Gear_Placement.setText(Integer.toString(Integer.parseInt(Gear_Placement.getText())+1));
 				
-				Data data = new Data();
-				try{
-					
-					//input ---------------------------------------------------------------
-					data.H_Speed = Double.parseDouble(H_Speed.getText());
-					data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
-
-					data.L_Speed = Double.parseDouble(L_Speed.getText());
-					data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
-					
-					data.Team_Number = Integer.parseInt(Team.getText());
-					data.Match_Number = Integer.parseInt(Match.getText());
-					
-					data.G_Input = Integer.parseInt(Gear_Input.getText());
-					data.G_Placement = Integer.parseInt(Gear_Placement.getText());
-					
-					data.H_Amount = Integer.parseInt(H_Amount.getText());
-					data.L_Amount = Integer.parseInt(L_Amount.getText());
-					
-					data.C_Accuracy = Double.parseDouble(Acc.getText());
-					data.C_Carry = Double.parseDouble(Cc.getText());
-					
-					data.Hopper1 = Collect_Top_Left.isSelected();
-					data.Hopper2 = Collect_Top_Right.isSelected();
-					data.Hopper3 = Collect_Bottom_Left.isSelected();
-					data.Hopper4 = Collect_Bottom_Middle.isSelected();
-					data.Hopper5 = Collect_Bottom_Right.isSelected();
-					
-					data.C_Ground  = rdbtnCollectedFromGround.isSelected();
-					data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
-					
-					data.G_Left = rdbtnLeftGear.isSelected();
-					data.G_Right = rdbtnRightGear.isSelected();
-					data.G_Middle = rdbtnMiddleGear.isSelected();
-					
-					data.Rope = rdbtnClimbedRope.isSelected();
-					
-					data.Note = Nts.getText();
-					
-					}catch(Exception e1){System.out.println(e);}
-					
-					//Output -------------------------------------------------
-
-					H_Speed.setText(Double.toString(data.H_Speed));
-					H_Accuracy.setText(Double.toString(data.H_Accuracy));
-					
-					L_Speed.setText(Double.toString(data.L_Speed));
-					L_Accuracy.setText(Double.toString(data.L_Accuracy));
-					
-					Team.setText(Integer.toString(data.Team_Number));
-					Match.setText(Integer.toString(data.Match_Number));
-					
-					Gear_Input.setText(Integer.toString(data.G_Input));
-					Gear_Placement.setText(Integer.toString(data.G_Placement));
-					
-					Acc.setText(Double.toString(data.C_Accuracy));
-					Cc.setText(Double.toString(data.C_Carry));
-					
-					H_Amount.setText(Integer.toString(data.H_Amount));
-					L_Amount.setText(Integer.toString(data.L_Amount));
-					
-					Collect_Top_Right.setSelected(data.Hopper1);
-					Collect_Top_Left.setSelected(data.Hopper2);
-					Collect_Bottom_Left.setSelected(data.Hopper3);
-					Collect_Bottom_Middle.setSelected(data.Hopper4);
-					Collect_Bottom_Right.setSelected(data.Hopper5);
-					
-					rdbtnCollectedFromGround.setSelected(data.C_Ground);
-					rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
-					
-					rdbtnLeftGear.setSelected(data.G_Left);
-					rdbtnRightGear.setSelected(data.G_Right);
-					rdbtnMiddleGear.setSelected(data.G_Middle);
-					rdbtnClimbedRope.setSelected(data.Rope);
-					
-					System.out.println(data.G_Left);
-					System.out.println(data.G_Right);
-					System.out.println(data.G_Middle);
-					System.out.println(data.Hopper1);
-					System.out.println(data.Hopper2);
-					System.out.println(data.Hopper3);
-					System.out.println(data.Hopper4);
-					System.out.println(data.Hopper5);
-					System.out.println(data.Rope);
-					System.out.println("_-_-_-_-_-_-_-_-_-_-_-_");
-					
-					Nts.setText(data.Note);
-			}
+				}
 		});
 		Gear_Placement_Add_Right.setBounds(466, 184, 48, 29);
 		frame.getContentPane().add(Gear_Placement_Add_Right);
@@ -829,94 +216,7 @@ public static void ent(String[] args) {
 			public void actionPerformed(ActionEvent e) {
 				Gear_Placement.setText(Integer.toString(Integer.parseInt(Gear_Placement.getText())-1));
 				
-				Data data = new Data();
-				try{
-					
-					//input ---------------------------------------------------------------
-					data.H_Speed = Double.parseDouble(H_Speed.getText());
-					data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
-
-					data.L_Speed = Double.parseDouble(L_Speed.getText());
-					data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
-					
-					data.Team_Number = Integer.parseInt(Team.getText());
-					data.Match_Number = Integer.parseInt(Match.getText());
-					
-					data.G_Input = Integer.parseInt(Gear_Input.getText());
-					data.G_Placement = Integer.parseInt(Gear_Placement.getText());
-					
-					data.H_Amount = Integer.parseInt(H_Amount.getText());
-					data.L_Amount = Integer.parseInt(L_Amount.getText());
-					
-					data.C_Accuracy = Double.parseDouble(Acc.getText());
-					data.C_Carry = Double.parseDouble(Cc.getText());
-					
-					data.Hopper1 = Collect_Top_Left.isSelected();
-					data.Hopper2 = Collect_Top_Right.isSelected();
-					data.Hopper3 = Collect_Bottom_Left.isSelected();
-					data.Hopper4 = Collect_Bottom_Middle.isSelected();
-					data.Hopper5 = Collect_Bottom_Right.isSelected();
-					
-					data.C_Ground  = rdbtnCollectedFromGround.isSelected();
-					data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
-					
-					data.G_Left = rdbtnLeftGear.isSelected();
-					data.G_Right = rdbtnRightGear.isSelected();
-					data.G_Middle = rdbtnMiddleGear.isSelected();
-					
-					data.Rope = rdbtnClimbedRope.isSelected();
-					
-					data.Note = Nts.getText();
-					
-					}catch(Exception e1){System.out.println(e);}
-					
-					//Output -------------------------------------------------
-
-					H_Speed.setText(Double.toString(data.H_Speed));
-					H_Accuracy.setText(Double.toString(data.H_Accuracy));
-					
-					L_Speed.setText(Double.toString(data.L_Speed));
-					L_Accuracy.setText(Double.toString(data.L_Accuracy));
-					
-					Team.setText(Integer.toString(data.Team_Number));
-					Match.setText(Integer.toString(data.Match_Number));
-					
-					Gear_Input.setText(Integer.toString(data.G_Input));
-					Gear_Placement.setText(Integer.toString(data.G_Placement));
-					
-					Acc.setText(Double.toString(data.C_Accuracy));
-					Cc.setText(Double.toString(data.C_Carry));
-					
-					H_Amount.setText(Integer.toString(data.H_Amount));
-					L_Amount.setText(Integer.toString(data.L_Amount));
-					
-					Collect_Top_Right.setSelected(data.Hopper1);
-					Collect_Top_Left.setSelected(data.Hopper2);
-					Collect_Bottom_Left.setSelected(data.Hopper3);
-					Collect_Bottom_Middle.setSelected(data.Hopper4);
-					Collect_Bottom_Right.setSelected(data.Hopper5);
-					
-					rdbtnCollectedFromGround.setSelected(data.C_Ground);
-					rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
-					
-					rdbtnLeftGear.setSelected(data.G_Left);
-					rdbtnRightGear.setSelected(data.G_Right);
-					rdbtnMiddleGear.setSelected(data.G_Middle);
-					rdbtnClimbedRope.setSelected(data.Rope);
-					
-					System.out.println(data.G_Left);
-					System.out.println(data.G_Right);
-					System.out.println(data.G_Middle);
-					System.out.println(data.Hopper1);
-					System.out.println(data.Hopper2);
-					System.out.println(data.Hopper3);
-					System.out.println(data.Hopper4);
-					System.out.println(data.Hopper5);
-					System.out.println(data.Rope);
-					System.out.println("_-_-_-_-_-_-_-_-_-_-_-_");
-					
-					Nts.setText(data.Note);
-			}
+				}
 		});
 		Gear_Placement_Subtract_Right.setBounds(501, 184, 48, 29);
 		frame.getContentPane().add(Gear_Placement_Subtract_Right);
@@ -926,94 +226,7 @@ public static void ent(String[] args) {
 			public void actionPerformed(ActionEvent e) {
 				Gear_Input.setText(Integer.toString(Integer.parseInt(Gear_Input.getText())-1));
 				
-				Data data = new Data();
-				try{
-					
-					//input ---------------------------------------------------------------
-					data.H_Speed = Double.parseDouble(H_Speed.getText());
-					data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
-
-					data.L_Speed = Double.parseDouble(L_Speed.getText());
-					data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
-					
-					data.Team_Number = Integer.parseInt(Team.getText());
-					data.Match_Number = Integer.parseInt(Match.getText());
-					
-					data.G_Input = Integer.parseInt(Gear_Input.getText());
-					data.G_Placement = Integer.parseInt(Gear_Placement.getText());
-					
-					data.H_Amount = Integer.parseInt(H_Amount.getText());
-					data.L_Amount = Integer.parseInt(L_Amount.getText());
-					
-					data.C_Accuracy = Double.parseDouble(Acc.getText());
-					data.C_Carry = Double.parseDouble(Cc.getText());
-					
-					data.Hopper1 = Collect_Top_Left.isSelected();
-					data.Hopper2 = Collect_Top_Right.isSelected();
-					data.Hopper3 = Collect_Bottom_Left.isSelected();
-					data.Hopper4 = Collect_Bottom_Middle.isSelected();
-					data.Hopper5 = Collect_Bottom_Right.isSelected();
-					
-					data.C_Ground  = rdbtnCollectedFromGround.isSelected();
-					data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
-					
-					data.G_Left = rdbtnLeftGear.isSelected();
-					data.G_Right = rdbtnRightGear.isSelected();
-					data.G_Middle = rdbtnMiddleGear.isSelected();
-					
-					data.Rope = rdbtnClimbedRope.isSelected();
-					
-					data.Note = Nts.getText();
-					
-					}catch(Exception e1){System.out.println(e);}
-					
-					//Output -------------------------------------------------
-
-					H_Speed.setText(Double.toString(data.H_Speed));
-					H_Accuracy.setText(Double.toString(data.H_Accuracy));
-					
-					L_Speed.setText(Double.toString(data.L_Speed));
-					L_Accuracy.setText(Double.toString(data.L_Accuracy));
-					
-					Team.setText(Integer.toString(data.Team_Number));
-					Match.setText(Integer.toString(data.Match_Number));
-					
-					Gear_Input.setText(Integer.toString(data.G_Input));
-					Gear_Placement.setText(Integer.toString(data.G_Placement));
-					
-					Acc.setText(Double.toString(data.C_Accuracy));
-					Cc.setText(Double.toString(data.C_Carry));
-					
-					H_Amount.setText(Integer.toString(data.H_Amount));
-					L_Amount.setText(Integer.toString(data.L_Amount));
-					
-					Collect_Top_Right.setSelected(data.Hopper1);
-					Collect_Top_Left.setSelected(data.Hopper2);
-					Collect_Bottom_Left.setSelected(data.Hopper3);
-					Collect_Bottom_Middle.setSelected(data.Hopper4);
-					Collect_Bottom_Right.setSelected(data.Hopper5);
-					
-					rdbtnCollectedFromGround.setSelected(data.C_Ground);
-					rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
-					
-					rdbtnLeftGear.setSelected(data.G_Left);
-					rdbtnRightGear.setSelected(data.G_Right);
-					rdbtnMiddleGear.setSelected(data.G_Middle);
-					rdbtnClimbedRope.setSelected(data.Rope);
-					
-					System.out.println(data.G_Left);
-					System.out.println(data.G_Right);
-					System.out.println(data.G_Middle);
-					System.out.println(data.Hopper1);
-					System.out.println(data.Hopper2);
-					System.out.println(data.Hopper3);
-					System.out.println(data.Hopper4);
-					System.out.println(data.Hopper5);
-					System.out.println(data.Rope);
-					System.out.println("_-_-_-_-_-_-_-_-_-_-_-_");
-					
-					Nts.setText(data.Note);
-			}
+				}
 		});
 		Gear_Pickup_Left_Right.setBounds(609, 75, 48, 29);
 		frame.getContentPane().add(Gear_Pickup_Left_Right);
@@ -1023,95 +236,7 @@ public static void ent(String[] args) {
 			public void actionPerformed(ActionEvent e) {
 				Gear_Input.setText(Integer.toString(Integer.parseInt(Gear_Input.getText())+1));
 				
-				Data data = new Data();
-				try{
-					
-					//input ---------------------------------------------------------------
-					data.H_Speed = Double.parseDouble(H_Speed.getText());
-					data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
-
-					data.L_Speed = Double.parseDouble(L_Speed.getText());
-					data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
-					
-					data.Team_Number = Integer.parseInt(Team.getText());
-					data.Match_Number = Integer.parseInt(Match.getText());
-					
-					data.G_Input = Integer.parseInt(Gear_Input.getText());
-					data.G_Placement = Integer.parseInt(Gear_Placement.getText());
-					
-					data.H_Amount = Integer.parseInt(H_Amount.getText());
-					data.L_Amount = Integer.parseInt(L_Amount.getText());
-					
-					data.C_Accuracy = Double.parseDouble(Acc.getText());
-					data.C_Carry = Double.parseDouble(Cc.getText());
-					
-					data.Hopper1 = Collect_Top_Left.isSelected();
-					data.Hopper2 = Collect_Top_Right.isSelected();
-					data.Hopper3 = Collect_Bottom_Left.isSelected();
-					data.Hopper4 = Collect_Bottom_Middle.isSelected();
-					data.Hopper5 = Collect_Bottom_Right.isSelected();
-					
-					data.C_Ground  = rdbtnCollectedFromGround.isSelected();
-					data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
-					
-					data.G_Left = rdbtnLeftGear.isSelected();
-					data.G_Right = rdbtnRightGear.isSelected();
-					data.G_Middle = rdbtnMiddleGear.isSelected();
-					
-					data.Rope = rdbtnClimbedRope.isSelected();
-					
-					data.Note = Nts.getText();
-					
-					}catch(Exception e1){System.out.println(e);}
-					
-					//Output -------------------------------------------------
-
-					H_Speed.setText(Double.toString(data.H_Speed));
-					H_Accuracy.setText(Double.toString(data.H_Accuracy));
-					
-					L_Speed.setText(Double.toString(data.L_Speed));
-					L_Accuracy.setText(Double.toString(data.L_Accuracy));
-					
-					Team.setText(Integer.toString(data.Team_Number));
-					Match.setText(Integer.toString(data.Match_Number));
-					
-					Gear_Input.setText(Integer.toString(data.G_Input));
-					Gear_Placement.setText(Integer.toString(data.G_Placement));
-					
-					Acc.setText(Double.toString(data.C_Accuracy));
-					Cc.setText(Double.toString(data.C_Carry));
-					
-					H_Amount.setText(Integer.toString(data.H_Amount));
-					L_Amount.setText(Integer.toString(data.L_Amount));
-					
-					Collect_Top_Right.setSelected(data.Hopper1);
-					Collect_Top_Left.setSelected(data.Hopper2);
-					Collect_Bottom_Left.setSelected(data.Hopper3);
-					Collect_Bottom_Middle.setSelected(data.Hopper4);
-					Collect_Bottom_Right.setSelected(data.Hopper5);
-					
-					rdbtnCollectedFromGround.setSelected(data.C_Ground);
-					rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
-					
-					rdbtnLeftGear.setSelected(data.G_Left);
-					rdbtnRightGear.setSelected(data.G_Right);
-					rdbtnMiddleGear.setSelected(data.G_Middle);
-					rdbtnClimbedRope.setSelected(data.Rope);
-					
-					System.out.println(data.G_Left);
-					System.out.println(data.G_Right);
-					System.out.println(data.G_Middle);
-					System.out.println(data.Hopper1);
-					System.out.println(data.Hopper2);
-					System.out.println(data.Hopper3);
-					System.out.println(data.Hopper4);
-					System.out.println(data.Hopper5);
-					System.out.println(data.Rope);
-					System.out.println("_-_-_-_-_-_-_-_-_-_-_-_");
-					
-					Nts.setText(data.Note);
-
-			}
+				}
 		});
 		Gear_Pickup_Add_Right.setBounds(570, 75, 48, 29);
 		frame.getContentPane().add(Gear_Pickup_Add_Right);
@@ -1121,94 +246,7 @@ public static void ent(String[] args) {
 		public void actionPerformed(ActionEvent e) {
 		H_Amount.setText(Integer.toString(Integer.parseInt(H_Amount.getText())+1));
 				
-				Data data = new Data();
-				try{
-					
-					//input ---------------------------------------------------------------
-					data.H_Speed = Double.parseDouble(H_Speed.getText());
-					data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
-
-					data.L_Speed = Double.parseDouble(L_Speed.getText());
-					data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
-					
-					data.Team_Number = Integer.parseInt(Team.getText());
-					data.Match_Number = Integer.parseInt(Match.getText());
-					
-					data.G_Input = Integer.parseInt(Gear_Input.getText());
-					data.G_Placement = Integer.parseInt(Gear_Placement.getText());
-					
-					data.H_Amount = Integer.parseInt(H_Amount.getText());
-					data.L_Amount = Integer.parseInt(L_Amount.getText());
-					
-					data.C_Accuracy = Double.parseDouble(Acc.getText());
-					data.C_Carry = Double.parseDouble(Cc.getText());
-					
-					data.Hopper1 = Collect_Top_Left.isSelected();
-					data.Hopper2 = Collect_Top_Right.isSelected();
-					data.Hopper3 = Collect_Bottom_Left.isSelected();
-					data.Hopper4 = Collect_Bottom_Middle.isSelected();
-					data.Hopper5 = Collect_Bottom_Right.isSelected();
-					
-					data.C_Ground  = rdbtnCollectedFromGround.isSelected();
-					data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
-					
-					data.G_Left = rdbtnLeftGear.isSelected();
-					data.G_Right = rdbtnRightGear.isSelected();
-					data.G_Middle = rdbtnMiddleGear.isSelected();
-					
-					data.Rope = rdbtnClimbedRope.isSelected();
-					
-					data.Note = Nts.getText();
-					
-					}catch(Exception e1){System.out.println(e);}
-					Home_Page.modelViewStats.data.add(data);
-					//Output -------------------------------------------------
-					
-					H_Speed.setText(Double.toString(data.H_Speed));
-					H_Accuracy.setText(Double.toString(data.H_Accuracy));
-					
-					L_Speed.setText(Double.toString(data.L_Speed));
-					L_Accuracy.setText(Double.toString(data.L_Accuracy));
-					
-					Team.setText(Integer.toString(data.Team_Number));
-					Match.setText(Integer.toString(data.Match_Number));
-					
-					Gear_Input.setText(Integer.toString(data.G_Input));
-					Gear_Placement.setText(Integer.toString(data.G_Placement));
-					
-					Acc.setText(Double.toString(data.C_Accuracy));
-					Cc.setText(Double.toString(data.C_Carry));
-					
-					H_Amount.setText(Integer.toString(data.H_Amount));
-					L_Amount.setText(Integer.toString(data.L_Amount));
-					
-					/*Collect_Top_Right.setSelected(data.Hopper1);
-					Collect_Top_Left.setSelected(data.Hopper2);
-					Collect_Bottom_Left.setSelected(data.Hopper3);
-					Collect_Bottom_Middle.setSelected(data.Hopper4);
-					Collect_Bottom_Right.setSelected(data.Hopper5);
-					
-					rdbtnCollectedFromGround.setSelected(data.C_Ground);
-					rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
-					
-					rdbtnLeftGear.setSelected(data.G_Left);
-					rdbtnRightGear.setSelected(data.G_Right);
-					rdbtnMiddleGear.setSelected(data.G_Middle);
-					rdbtnClimbedRope.setSelected(data.Rope);
-					
-					System.out.println(data.G_Left);
-					System.out.println(data.G_Right);
-					System.out.println(data.G_Middle);
-					System.out.println(data.Hopper1);
-					System.out.println(data.Hopper2);
-					System.out.println(data.Hopper3);
-					System.out.println(data.Hopper4);
-					System.out.println(data.Hopper5);
-					System.out.println(data.Rope);
-					System.out.println("_-_-_-_-_-_-_-_-_-_-_-_");
-					*/
-					Nts.setText(data.Note);
-			}
+				}
 		});
 		High_Goal_Add_Left.setBounds(85, 246, 48, 29);
 		frame.getContentPane().add(High_Goal_Add_Left);
@@ -1218,94 +256,7 @@ public static void ent(String[] args) {
 			public void actionPerformed(ActionEvent e) {
 				H_Amount.setText(Integer.toString(Integer.parseInt(H_Amount.getText())-1));
 				
-				Data data = new Data();
-				try{
-					
-					//input ---------------------------------------------------------------
-					data.H_Speed = Double.parseDouble(H_Speed.getText());
-					data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
-
-					data.L_Speed = Double.parseDouble(L_Speed.getText());
-					data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
-					
-					data.Team_Number = Integer.parseInt(Team.getText());
-					data.Match_Number = Integer.parseInt(Match.getText());
-					
-					data.G_Input = Integer.parseInt(Gear_Input.getText());
-					data.G_Placement = Integer.parseInt(Gear_Placement.getText());
-					
-					data.H_Amount = Integer.parseInt(H_Amount.getText());
-					data.L_Amount = Integer.parseInt(L_Amount.getText());
-					
-					data.C_Accuracy = Double.parseDouble(Acc.getText());
-					data.C_Carry = Double.parseDouble(Cc.getText());
-					
-					data.Hopper1 = Collect_Top_Left.isSelected();
-					data.Hopper2 = Collect_Top_Right.isSelected();
-					data.Hopper3 = Collect_Bottom_Left.isSelected();
-					data.Hopper4 = Collect_Bottom_Middle.isSelected();
-					data.Hopper5 = Collect_Bottom_Right.isSelected();
-					
-					data.C_Ground  = rdbtnCollectedFromGround.isSelected();
-					data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
-					
-					data.G_Left = rdbtnLeftGear.isSelected();
-					data.G_Right = rdbtnRightGear.isSelected();
-					data.G_Middle = rdbtnMiddleGear.isSelected();
-					
-					data.Rope = rdbtnClimbedRope.isSelected();
-					
-					data.Note = Nts.getText();
-					
-					}catch(Exception e1){System.out.println(e);}
-					
-					//Output -------------------------------------------------
-
-					H_Speed.setText(Double.toString(data.H_Speed));
-					H_Accuracy.setText(Double.toString(data.H_Accuracy));
-					
-					L_Speed.setText(Double.toString(data.L_Speed));
-					L_Accuracy.setText(Double.toString(data.L_Accuracy));
-					
-					Team.setText(Integer.toString(data.Team_Number));
-					Match.setText(Integer.toString(data.Match_Number));
-					
-					Gear_Input.setText(Integer.toString(data.G_Input));
-					Gear_Placement.setText(Integer.toString(data.G_Placement));
-					
-					Acc.setText(Double.toString(data.C_Accuracy));
-					Cc.setText(Double.toString(data.C_Carry));
-					
-					H_Amount.setText(Integer.toString(data.H_Amount));
-					L_Amount.setText(Integer.toString(data.L_Amount));
-					
-					Collect_Top_Right.setSelected(data.Hopper1);
-					Collect_Top_Left.setSelected(data.Hopper2);
-					Collect_Bottom_Left.setSelected(data.Hopper3);
-					Collect_Bottom_Middle.setSelected(data.Hopper4);
-					Collect_Bottom_Right.setSelected(data.Hopper5);
-					
-					rdbtnCollectedFromGround.setSelected(data.C_Ground);
-					rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
-					
-					rdbtnLeftGear.setSelected(data.G_Left);
-					rdbtnRightGear.setSelected(data.G_Right);
-					rdbtnMiddleGear.setSelected(data.G_Middle);
-					rdbtnClimbedRope.setSelected(data.Rope);
-					
-					System.out.println(data.G_Left);
-					System.out.println(data.G_Right);
-					System.out.println(data.G_Middle);
-					System.out.println(data.Hopper1);
-					System.out.println(data.Hopper2);
-					System.out.println(data.Hopper3);
-					System.out.println(data.Hopper4);
-					System.out.println(data.Hopper5);
-					System.out.println(data.Rope);
-					System.out.println("_-_-_-_-_-_-_-_-_-_-_-_");
-					
-					Nts.setText(data.Note);
-			}
+				}
 		});
 		High_Goal_Subtract_Left.setBounds(124, 246, 48, 29);
 		frame.getContentPane().add(High_Goal_Subtract_Left);
@@ -1315,94 +266,7 @@ public static void ent(String[] args) {
 			public void actionPerformed(ActionEvent e) {
 				H_Amount.setText(Integer.toString(Integer.parseInt(H_Amount.getText())-1));
 				
-				Data data = new Data();
-				try{
-					
-					//input ---------------------------------------------------------------
-					data.H_Speed = Double.parseDouble(H_Speed.getText());
-					data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
-
-					data.L_Speed = Double.parseDouble(L_Speed.getText());
-					data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
-					
-					data.Team_Number = Integer.parseInt(Team.getText());
-					data.Match_Number = Integer.parseInt(Match.getText());
-					
-					data.G_Input = Integer.parseInt(Gear_Input.getText());
-					data.G_Placement = Integer.parseInt(Gear_Placement.getText());
-					
-					data.H_Amount = Integer.parseInt(H_Amount.getText());
-					data.L_Amount = Integer.parseInt(L_Amount.getText());
-					
-					data.C_Accuracy = Double.parseDouble(Acc.getText());
-					data.C_Carry = Double.parseDouble(Cc.getText());
-					
-					data.Hopper1 = Collect_Top_Left.isSelected();
-					data.Hopper2 = Collect_Top_Right.isSelected();
-					data.Hopper3 = Collect_Bottom_Left.isSelected();
-					data.Hopper4 = Collect_Bottom_Middle.isSelected();
-					data.Hopper5 = Collect_Bottom_Right.isSelected();
-					
-					data.C_Ground  = rdbtnCollectedFromGround.isSelected();
-					data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
-					
-					data.G_Left = rdbtnLeftGear.isSelected();
-					data.G_Right = rdbtnRightGear.isSelected();
-					data.G_Middle = rdbtnMiddleGear.isSelected();
-					
-					data.Rope = rdbtnClimbedRope.isSelected();
-					
-					data.Note = Nts.getText();
-					
-					}catch(Exception e1){System.out.println(e);}
-					
-					//Output -------------------------------------------------
-
-					H_Speed.setText(Double.toString(data.H_Speed));
-					H_Accuracy.setText(Double.toString(data.H_Accuracy));
-					
-					L_Speed.setText(Double.toString(data.L_Speed));
-					L_Accuracy.setText(Double.toString(data.L_Accuracy));
-					
-					Team.setText(Integer.toString(data.Team_Number));
-					Match.setText(Integer.toString(data.Match_Number));
-					
-					Gear_Input.setText(Integer.toString(data.G_Input));
-					Gear_Placement.setText(Integer.toString(data.G_Placement));
-					
-					Acc.setText(Double.toString(data.C_Accuracy));
-					Cc.setText(Double.toString(data.C_Carry));
-					
-					H_Amount.setText(Integer.toString(data.H_Amount));
-					L_Amount.setText(Integer.toString(data.L_Amount));
-					
-					Collect_Top_Right.setSelected(data.Hopper1);
-					Collect_Top_Left.setSelected(data.Hopper2);
-					Collect_Bottom_Left.setSelected(data.Hopper3);
-					Collect_Bottom_Middle.setSelected(data.Hopper4);
-					Collect_Bottom_Right.setSelected(data.Hopper5);
-					
-					rdbtnCollectedFromGround.setSelected(data.C_Ground);
-					rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
-					
-					rdbtnLeftGear.setSelected(data.G_Left);
-					rdbtnRightGear.setSelected(data.G_Right);
-					rdbtnMiddleGear.setSelected(data.G_Middle);
-					rdbtnClimbedRope.setSelected(data.Rope);
-					
-					System.out.println(data.G_Left);
-					System.out.println(data.G_Right);
-					System.out.println(data.G_Middle);
-					System.out.println(data.Hopper1);
-					System.out.println(data.Hopper2);
-					System.out.println(data.Hopper3);
-					System.out.println(data.Hopper4);
-					System.out.println(data.Hopper5);
-					System.out.println(data.Rope);
-					System.out.println("_-_-_-_-_-_-_-_-_-_-_-_");
-					
-					Nts.setText(data.Note);
-			}
+				}
 		});
 		High_Goal_Subtract_Right.setBounds(609, 246, 48, 29);
 		frame.getContentPane().add(High_Goal_Subtract_Right);
@@ -1412,94 +276,7 @@ public static void ent(String[] args) {
 			public void actionPerformed(ActionEvent e) {
 				H_Amount.setText(Integer.toString(Integer.parseInt(H_Amount.getText())+1));
 				
-				Data data = new Data();
-				try{
-					
-					//input ---------------------------------------------------------------
-					data.H_Speed = Double.parseDouble(H_Speed.getText());
-					data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
-
-					data.L_Speed = Double.parseDouble(L_Speed.getText());
-					data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
-					
-					data.Team_Number = Integer.parseInt(Team.getText());
-					data.Match_Number = Integer.parseInt(Match.getText());
-					
-					data.G_Input = Integer.parseInt(Gear_Input.getText());
-					data.G_Placement = Integer.parseInt(Gear_Placement.getText());
-					
-					data.H_Amount = Integer.parseInt(H_Amount.getText());
-					data.L_Amount = Integer.parseInt(L_Amount.getText());
-					
-					data.C_Accuracy = Double.parseDouble(Acc.getText());
-					data.C_Carry = Double.parseDouble(Cc.getText());
-					
-					data.Hopper1 = Collect_Top_Left.isSelected();
-					data.Hopper2 = Collect_Top_Right.isSelected();
-					data.Hopper3 = Collect_Bottom_Left.isSelected();
-					data.Hopper4 = Collect_Bottom_Middle.isSelected();
-					data.Hopper5 = Collect_Bottom_Right.isSelected();
-					
-					data.C_Ground  = rdbtnCollectedFromGround.isSelected();
-					data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
-					
-					data.G_Left = rdbtnLeftGear.isSelected();
-					data.G_Right = rdbtnRightGear.isSelected();
-					data.G_Middle = rdbtnMiddleGear.isSelected();
-					
-					data.Rope = rdbtnClimbedRope.isSelected();
-					
-					data.Note = Nts.getText();
-					
-					}catch(Exception e1){System.out.println(e);}
-					
-					//Output -------------------------------------------------
-
-					H_Speed.setText(Double.toString(data.H_Speed));
-					H_Accuracy.setText(Double.toString(data.H_Accuracy));
-					
-					L_Speed.setText(Double.toString(data.L_Speed));
-					L_Accuracy.setText(Double.toString(data.L_Accuracy));
-					
-					Team.setText(Integer.toString(data.Team_Number));
-					Match.setText(Integer.toString(data.Match_Number));
-					
-					Gear_Input.setText(Integer.toString(data.G_Input));
-					Gear_Placement.setText(Integer.toString(data.G_Placement));
-					
-					Acc.setText(Double.toString(data.C_Accuracy));
-					Cc.setText(Double.toString(data.C_Carry));
-					
-					H_Amount.setText(Integer.toString(data.H_Amount));
-					L_Amount.setText(Integer.toString(data.L_Amount));
-					
-					Collect_Top_Right.setSelected(data.Hopper1);
-					Collect_Top_Left.setSelected(data.Hopper2);
-					Collect_Bottom_Left.setSelected(data.Hopper3);
-					Collect_Bottom_Middle.setSelected(data.Hopper4);
-					Collect_Bottom_Right.setSelected(data.Hopper5);
-					
-					rdbtnCollectedFromGround.setSelected(data.C_Ground);
-					rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
-					
-					rdbtnLeftGear.setSelected(data.G_Left);
-					rdbtnRightGear.setSelected(data.G_Right);
-					rdbtnMiddleGear.setSelected(data.G_Middle);
-					rdbtnClimbedRope.setSelected(data.Rope);
-					
-					System.out.println(data.G_Left);
-					System.out.println(data.G_Right);
-					System.out.println(data.G_Middle);
-					System.out.println(data.Hopper1);
-					System.out.println(data.Hopper2);
-					System.out.println(data.Hopper3);
-					System.out.println(data.Hopper4);
-					System.out.println(data.Hopper5);
-					System.out.println(data.Rope);
-					System.out.println("_-_-_-_-_-_-_-_-_-_-_-_");
-					
-					Nts.setText(data.Note);
-			}
+				}
 		});
 		High_Goal_Add_Right.setBounds(570, 246, 48, 29);
 		frame.getContentPane().add(High_Goal_Add_Right);
@@ -1534,58 +311,10 @@ public static void ent(String[] args) {
 		Teleop = new JRadioButton("Teleop");
 		Teleop.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Mode mode = new Mode();
-				Data data = new Data();
-				mode.teleop = true;
-				mode.auto = false;
+				
 				Auto.setSelected(false);
 				
-				H_Speed.setText(Double.toString(data.H_Speed));
-				H_Accuracy.setText(Double.toString(data.H_Accuracy));
-				
-				L_Speed.setText(Double.toString(data.L_Speed));
-				L_Accuracy.setText(Double.toString(data.L_Accuracy));
-				
-				Team.setText(Integer.toString(data.Team_Number));
-				Match.setText(Integer.toString(data.Match_Number));
-				
-				Gear_Input.setText(Integer.toString(data.G_Input));
-				Gear_Placement.setText(Integer.toString(data.G_Placement));
-				
-				Acc.setText(Double.toString(data.C_Accuracy));
-				Cc.setText(Double.toString(data.C_Carry));
-				
-				H_Amount.setText(Integer.toString(data.H_Amount));
-				L_Amount.setText(Integer.toString(data.L_Amount));
-				/*
-				Collect_Top_Right.setSelected(data.Hopper1);
-				Collect_Top_Left.setSelected(data.Hopper2);
-				Collect_Bottom_Left.setSelected(data.Hopper3);
-				Collect_Bottom_Middle.setSelected(data.Hopper4);
-				Collect_Bottom_Right.setSelected(data.Hopper5);
-				
-				rdbtnCollectedFromGround.setSelected(data.C_Ground);
-				rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
-				
-				rdbtnLeftGear.setSelected(data.G_Left);
-				rdbtnRightGear.setSelected(data.G_Right);
-				rdbtnMiddleGear.setSelected(data.G_Middle);
-				rdbtnClimbedRope.setSelected(data.Rope);
-				
-				/*System.out.println(data.G_Left);
-				System.out.println(data.G_Right);
-				System.out.println(data.G_Middle);
-				System.out.println(data.Hopper1);
-				System.out.println(data.Hopper2);
-				System.out.println(data.Hopper3);
-				System.out.println(data.Hopper4);
-				System.out.println(data.Hopper5);
-				System.out.println(data.Rope);
-				System.out.println("_-_-_-_-_-_-_-_-_-_-_-_");
-				*/
-				
-				Nts.setText(data.Note);
-			}
+				}
 		});
 		Teleop.setBounds(6, 312, 74, 23);
 		frame.getContentPane().add(Teleop);
@@ -1593,58 +322,10 @@ public static void ent(String[] args) {
 		Auto = new JRadioButton("Autonomous");
 		Auto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Mode mode = new Mode();
-				Auto_Data adata = new Auto_Data();
-				mode.auto = true;
-				mode.teleop = false;
+				
 				Teleop.setSelected(false);
 				
-				H_Speed.setText(Double.toString(adata.H_Speed));
-				H_Accuracy.setText(Double.toString(adata.H_Accuracy));
-				
-				L_Speed.setText(Double.toString(adata.L_Speed));
-				L_Accuracy.setText(Double.toString(adata.L_Accuracy));
-				
-				Team.setText(Integer.toString(adata.Team_Number));
-				Match.setText(Integer.toString(adata.Match_Number));
-				
-				Gear_Input.setText(Integer.toString(adata.G_Input));
-				Gear_Placement.setText(Integer.toString(adata.G_Placement));
-				
-				Acc.setText(Double.toString(adata.C_Accuracy));
-				Cc.setText(Double.toString(adata.C_Carry));
-				
-				H_Amount.setText(Integer.toString(adata.H_Amount));
-				L_Amount.setText(Integer.toString(adata.L_Amount));
-				
-				Collect_Top_Right.setSelected(adata.Hopper1);
-				Collect_Top_Left.setSelected(adata.Hopper2);
-				Collect_Bottom_Left.setSelected(adata.Hopper3);
-				Collect_Bottom_Middle.setSelected(adata.Hopper4);
-				Collect_Bottom_Right.setSelected(adata.Hopper5);
-				/*
-				rdbtnCollectedFromGround.setSelected(adata.C_Ground);
-				rdbtnCollectedFromHoppers.setSelected(adata.C_Hoppers);
-				
-				rdbtnLeftGear.setSelected(adata.G_Left);
-				rdbtnRightGear.setSelected(adata.G_Right);
-				rdbtnMiddleGear.setSelected(adata.G_Middle);
-				rdbtnClimbedRope.setSelected(adata.Rope);
-				
-				System.out.println(data.G_Left);
-				System.out.println(data.G_Right);
-				System.out.println(data.G_Middle);
-				System.out.println(data.Hopper1);
-				System.out.println(data.Hopper2);
-				System.out.println(data.Hopper3);
-				System.out.println(data.Hopper4);
-				System.out.println(data.Hopper5);
-				System.out.println(data.Rope);
-				System.out.println("_-_-_-_-_-_-_-_-_-_-_-_");
-				*/
-				
-				Nts.setText(adata.Note);
-			}
+				}
 		});
 		Auto.setBounds(85, 312, 141, 23);
 		frame.getContentPane().add(Auto);
@@ -1883,11 +564,9 @@ public static void ent(String[] args) {
 		btnUpdate = new JButton("Start Match");
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Data data = new Data();
-				//Mode mode = new Mode();
-				//Auto_Data ad = new Auto_Data();
-				
-				try{
+			
+			Data data = new Data();
+			try{
 					
 					//input ---------------------------------------------------------------
 					data.H_Speed = Double.parseDouble(H_Speed.getText());
@@ -1961,28 +640,11 @@ public static void ent(String[] args) {
 					rdbtnMiddleGear.setSelected(data.G_Middle);
 					rdbtnClimbedRope.setSelected(data.Rope);
 					
-					/*System.out.println(data.G_Left);
-					System.out.println(data.G_Right);
-					System.out.println(data.G_Middle);
-					System.out.println(data.Hopper1);
-					System.out.println(data.Hopper2);
-					System.out.println(data.Hopper3);
-					System.out.println(data.Hopper4);
-					System.out.println(data.Hopper5);
-					System.out.println(data.Rope);
-					System.out.println("_-_-_-_-_-_-_-_-_-_-_-_");
-					*/
-					
 					Nts.setText(data.Note);
-					
-					//Everything else _-_-_-__-__--_-_-_-_-_-_-_-_-_-_-___-_-___-_____-_-_-_-___--__
-					
-					
-						time.start();
+
+					time.start();
 						
-						
-						
-				}});
+					}});
 		btnUpdate.setBounds(427, 311, 117, 29);
 		frame.getContentPane().add(btnUpdate);
 		

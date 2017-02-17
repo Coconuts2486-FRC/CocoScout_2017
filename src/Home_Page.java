@@ -59,7 +59,7 @@ public class Home_Page {
 			@SuppressWarnings("static-access")
 			public void actionPerformed(ActionEvent e) {
 				Entry_Page ent=new Entry_Page();
-				ent.ent(null);
+				ent.main(null);
 			}
 		});
 		btnNewEntry.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
