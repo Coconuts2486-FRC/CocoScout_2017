@@ -70,12 +70,12 @@ public class Login_Page {
 		btnLogin.addActionListener(new ActionListener() {
 			@SuppressWarnings("static-access")
 			public void actionPerformed(ActionEvent e) {
-				double password=3.14159;
+				String password="coconino";
 				@SuppressWarnings("deprecation")
-				double enter= Double.parseDouble(passwordField.getText());
-				if (password==enter){
-				Home_Page hm= new Home_Page();
-				hm.hm(null);
+				String enter=passwordField.getText();
+				if (password.equals(enter)){
+				Page_Opener_Page pop= new Page_Opener_Page();
+				pop.main(null);
 				frame.dispose();}
 				else if(!(password==enter)){JOptionPane.showMessageDialog(frame, "Password is incorrect: Contact Logan M. for password");}
 		}

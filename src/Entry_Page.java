@@ -59,8 +59,6 @@ public static void main(String[] args) {
 	static JRadioButton Collect_Bottom_Left;
 	static JRadioButton rdbtnCollectedFromGround;
 	static JRadioButton rdbtnCollectedFromHoppers;
-	static JRadioButton Teleop;
-	static JRadioButton Auto;
 	static JTextField H_Speed;
 	static JTextField L_Speed;
 	static JTextField Gear_Input;
@@ -101,10 +99,17 @@ public static void main(String[] args) {
 	static JRadioButton rdbtnRightGear;
 	private JTextField Timer_Minute;
 	public Entry_Page() {initialize();}
-
+	Data data;
+	Auto_Data autodata;
+	//String aaauto = "Auto";
+	//String ttteleop = "Teleop";
+	boolean mode;
+	private JButton btnMode;
+	private JTextField Mode;
+	private JRadioButton rdbtnCrossedLine;
 	private void initialize() {
-	@SuppressWarnings("unused")
-	Data dat = new Data();	
+		data = new Data();
+		autodata = new Auto_Data();
 		
 		
 		frame = new JFrame();
@@ -307,29 +312,6 @@ public static void main(String[] args) {
 		Collect_Top_Right.setBounds(424, 54, 141, 23);
 		frame.getContentPane().add(Collect_Top_Right);
 		
-		
-		Teleop = new JRadioButton("Teleop");
-		Teleop.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				Auto.setSelected(false);
-				
-				}
-		});
-		Teleop.setBounds(6, 312, 74, 23);
-		frame.getContentPane().add(Teleop);
-		
-		Auto = new JRadioButton("Autonomous");
-		Auto.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				Teleop.setSelected(false);
-				
-				}
-		});
-		Auto.setBounds(85, 312, 141, 23);
-		frame.getContentPane().add(Auto);
-		
 		JLabel lblHighGoal = new JLabel("High Goal:");
 		lblHighGoal.setBounds(5, 347, 66, 16);
 		frame.getContentPane().add(lblHighGoal);
@@ -450,7 +432,61 @@ public static void main(String[] args) {
 		lblNotes_1.setBounds(6, 587, 61, 16);
 		frame.getContentPane().add(lblNotes_1);
 		
+		Thread time = new Thread(){
+			public void run(){
+			mode = true;
+			Timer_Minute.setText(Integer.toString(0));
+			int count=15;
+			while (!(count==-1)){
+			//Timer_Time.setText(Integer.toString(15));
+			try {Thread.sleep(1000);} 
+			catch (InterruptedException e) {e.printStackTrace();}
+			Timer_Secound.setText(Integer.toString(count));
+			count --;}
+			//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+			
+			//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+			Timer_Minute.setText(Integer.toString(2));
+			int count2 = 15;
+			while (!(count2==-1)){
+				try {Thread.sleep(1000);} 
+				catch (InterruptedException e) {e.printStackTrace();}
+				Timer_Secound.setText(Integer.toString(count2));
+				count2 --;}
+			Timer_Minute.setText(Integer.toString(1));
+			int count3 = 60;
+			while (!(count3==-1)){
+				try {Thread.sleep(1000);} 
+				catch (InterruptedException e) {e.printStackTrace();}
+				Timer_Secound.setText(Integer.toString(count3));
+				count3 --;}
+			Timer_Minute.setText(Integer.toString(0));
+			int count4 = 60;
+			while (!(count4==-1)){
+				try {Thread.sleep(1000);} 
+				catch (InterruptedException e) {e.printStackTrace();}
+				Timer_Secound.setText(Integer.toString(count4));
+				count4 --;}}};
+		
 		Upload = new JButton("Upload");
+		Upload.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+						
+						
+						Home_Page.modelViewStats.data.add(data);
+						System.out.println("Yay!!!!!! data");
+						System.out.println(data.Team_Number);
+						
+						Home_Page.modelViewStats.autodata.add(autodata);
+						System.out.println("Yay!!!!!! autodata");
+						System.out.println(autodata.Hopper3);
+						
+						//time.stop();
+						//frame.dispose();
+						
+			}
+		});
 		Upload.setBounds(647, 311, 117, 29);
 		frame.getContentPane().add(Upload);
 		
@@ -513,48 +549,14 @@ public static void main(String[] args) {
 		JButton Info = new JButton("Info");
 		Info.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
-		System.out.println("it worked!!!!!!!!!!");
+		Info_Page ip = new Info_Page();
+		ip.main(null);
 			}
 		});
 		Info.setBounds(537, 311, 117, 29);
 		frame.getContentPane().add(Info);
 		
-		Thread time = new Thread(){
-			public void run(){
-			Teleop.setSelected(false);
-			Auto.setSelected(true);
-			Timer_Minute.setText(Integer.toString(0));
-			int count=15;
-			while (!(count==-1)){
-			//Timer_Time.setText(Integer.toString(15));
-			try {Thread.sleep(1000);} 
-			catch (InterruptedException e) {e.printStackTrace();}
-			Timer_Secound.setText(Integer.toString(count));
-			count --;}
-			//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-			
-			//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-			Timer_Minute.setText(Integer.toString(2));
-			int count2 = 15;
-			while (!(count2==-1)){
-				try {Thread.sleep(1000);} 
-				catch (InterruptedException e) {e.printStackTrace();}
-				Timer_Secound.setText(Integer.toString(count2));
-				count2 --;}
-			Timer_Minute.setText(Integer.toString(1));
-			int count3 = 60;
-			while (!(count3==-1)){
-				try {Thread.sleep(1000);} 
-				catch (InterruptedException e) {e.printStackTrace();}
-				Timer_Secound.setText(Integer.toString(count3));
-				count3 --;}
-			Timer_Minute.setText(Integer.toString(0));
-			int count4 = 60;
-			while (!(count4==-1)){
-				try {Thread.sleep(1000);} 
-				catch (InterruptedException e) {e.printStackTrace();}
-				Timer_Secound.setText(Integer.toString(count4));
-				count4 --;}}};
+		
 				
 				//Mode >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 				
@@ -564,84 +566,84 @@ public static void main(String[] args) {
 		btnUpdate = new JButton("Start Match");
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
-			Data data = new Data();
+			mode = true;
+			Mode.setText("Auto");
 			try{
 					
 					//input ---------------------------------------------------------------
-					data.H_Speed = Double.parseDouble(H_Speed.getText());
-					data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
+					autodata.H_Speed = Double.parseDouble(H_Speed.getText());
+					autodata.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
 
-					data.L_Speed = Double.parseDouble(L_Speed.getText());
-					data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
+					autodata.L_Speed = Double.parseDouble(L_Speed.getText());
+					autodata.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
 					
-					data.Team_Number = Integer.parseInt(Team.getText());
-					data.Match_Number = Integer.parseInt(Match.getText());
+					autodata.Team_Number = Integer.parseInt(Team.getText());
+					autodata.Match_Number = Integer.parseInt(Match.getText());
 					
-					data.G_Input = Integer.parseInt(Gear_Input.getText());
-					data.G_Placement = Integer.parseInt(Gear_Placement.getText());
+					autodata.G_Input = Integer.parseInt(Gear_Input.getText());
+					autodata.G_Placement = Integer.parseInt(Gear_Placement.getText());
 					
-					data.H_Amount = Integer.parseInt(H_Amount.getText());
-					data.L_Amount = Integer.parseInt(L_Amount.getText());
+					autodata.H_Amount = Integer.parseInt(H_Amount.getText());
+					autodata.L_Amount = Integer.parseInt(L_Amount.getText());
 					
-					data.C_Accuracy = Double.parseDouble(Acc.getText());
-					data.C_Carry = Double.parseDouble(Cc.getText());
+					autodata.C_Accuracy = Double.parseDouble(Acc.getText());
+					autodata.C_Carry = Double.parseDouble(Cc.getText());
 					
-					data.Hopper1 = Collect_Top_Left.isSelected();
-					data.Hopper2 = Collect_Top_Right.isSelected();
-					data.Hopper3 = Collect_Bottom_Left.isSelected();
-					data.Hopper4 = Collect_Bottom_Middle.isSelected();
-					data.Hopper5 = Collect_Bottom_Right.isSelected();
+					autodata.Hopper1 = Collect_Top_Left.isSelected();
+					autodata.Hopper2 = Collect_Top_Right.isSelected();
+					autodata.Hopper3 = Collect_Bottom_Left.isSelected();
+					autodata.Hopper4 = Collect_Bottom_Middle.isSelected();
+					autodata.Hopper5 = Collect_Bottom_Right.isSelected();
 					
-					data.C_Ground  = rdbtnCollectedFromGround.isSelected();
-					data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
+					autodata.C_Ground  = rdbtnCollectedFromGround.isSelected();
+					autodata.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
 					
-					data.G_Left = rdbtnLeftGear.isSelected();
-					data.G_Right = rdbtnRightGear.isSelected();
-					data.G_Middle = rdbtnMiddleGear.isSelected();
+					autodata.G_Left = rdbtnLeftGear.isSelected();
+					autodata.G_Right = rdbtnRightGear.isSelected();
+					autodata.G_Middle = rdbtnMiddleGear.isSelected();
 					
 					data.Rope = rdbtnClimbedRope.isSelected();
 					
-					data.Note = Nts.getText();
+					autodata.Note = Nts.getText();
 					
 					}catch(Exception e1){System.out.println(e);}
 					
 					//Output -------------------------------------------------
 
-					H_Speed.setText(Double.toString(data.H_Speed));
-					H_Accuracy.setText(Double.toString(data.H_Accuracy));
+					H_Speed.setText(Double.toString(autodata.H_Speed));
+					H_Accuracy.setText(Double.toString(autodata.H_Accuracy));
 					
-					L_Speed.setText(Double.toString(data.L_Speed));
-					L_Accuracy.setText(Double.toString(data.L_Accuracy));
+					L_Speed.setText(Double.toString(autodata.L_Speed));
+					L_Accuracy.setText(Double.toString(autodata.L_Accuracy));
 					
-					Team.setText(Integer.toString(data.Team_Number));
-					Match.setText(Integer.toString(data.Match_Number));
+					Team.setText(Integer.toString(autodata.Team_Number));
+					Match.setText(Integer.toString(autodata.Match_Number));
 					
-					Gear_Input.setText(Integer.toString(data.G_Input));
-					Gear_Placement.setText(Integer.toString(data.G_Placement));
+					Gear_Input.setText(Integer.toString(autodata.G_Input));
+					Gear_Placement.setText(Integer.toString(autodata.G_Placement));
 					
-					Acc.setText(Double.toString(data.C_Accuracy));
-					Cc.setText(Double.toString(data.C_Carry));
+					Acc.setText(Double.toString(autodata.C_Accuracy));
+					Cc.setText(Double.toString(autodata.C_Carry));
 					
-					H_Amount.setText(Integer.toString(data.H_Amount));
-					L_Amount.setText(Integer.toString(data.L_Amount));
+					H_Amount.setText(Integer.toString(autodata.H_Amount));
+					L_Amount.setText(Integer.toString(autodata.L_Amount));
 					
-					Collect_Top_Right.setSelected(data.Hopper1);
-					Collect_Top_Left.setSelected(data.Hopper2);
-					Collect_Bottom_Left.setSelected(data.Hopper3);
-					Collect_Bottom_Middle.setSelected(data.Hopper4);
-					Collect_Bottom_Right.setSelected(data.Hopper5);
+					Collect_Top_Right.setSelected(autodata.Hopper1);
+					Collect_Top_Left.setSelected(autodata.Hopper2);
+					Collect_Bottom_Left.setSelected(autodata.Hopper3);
+					Collect_Bottom_Middle.setSelected(autodata.Hopper4);
+					Collect_Bottom_Right.setSelected(autodata.Hopper5);
 					
-					rdbtnCollectedFromGround.setSelected(data.C_Ground);
-					rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
+					rdbtnCollectedFromGround.setSelected(autodata.C_Ground);
+					rdbtnCollectedFromHoppers.setSelected(autodata.C_Hoppers);
 					
-					rdbtnLeftGear.setSelected(data.G_Left);
-					rdbtnRightGear.setSelected(data.G_Right);
-					rdbtnMiddleGear.setSelected(data.G_Middle);
+					rdbtnLeftGear.setSelected(autodata.G_Left);
+					rdbtnRightGear.setSelected(autodata.G_Right);
+					rdbtnMiddleGear.setSelected(autodata.G_Middle);
 					rdbtnClimbedRope.setSelected(data.Rope);
 					
-					Nts.setText(data.Note);
-
+					Nts.setText(autodata.Note);
+					
 					time.start();
 						
 					}});
@@ -726,6 +728,185 @@ public static void main(String[] args) {
 		Timer_Minute.setBounds(6, 445, 50, 50);
 		frame.getContentPane().add(Timer_Minute);
 		Timer_Minute.setColumns(10);
+		
+		btnMode = new JButton("Mode");
+		btnMode.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			if(mode==true){
+			mode = false;
+			Mode.setText("Teleop");
+			
+			try{
+				
+				//input ---------------------------------------------------------------
+				autodata.H_Speed = Double.parseDouble(H_Speed.getText());
+				autodata.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
+
+				autodata.L_Speed = Double.parseDouble(L_Speed.getText());
+				autodata.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
+				
+				data.Team_Number = Integer.parseInt(Team.getText());
+				data.Match_Number = Integer.parseInt(Match.getText());
+				
+				autodata.G_Input = Integer.parseInt(Gear_Input.getText());
+				autodata.G_Placement = Integer.parseInt(Gear_Placement.getText());
+				
+				autodata.H_Amount = Integer.parseInt(H_Amount.getText());
+				autodata.L_Amount = Integer.parseInt(L_Amount.getText());
+				
+				autodata.C_Accuracy = Double.parseDouble(Acc.getText());
+				autodata.C_Carry = Double.parseDouble(Cc.getText());
+				
+				autodata.Hopper1 = Collect_Top_Left.isSelected();
+				autodata.Hopper2 = Collect_Top_Right.isSelected();
+				autodata.Hopper3 = Collect_Bottom_Left.isSelected();
+				autodata.Hopper4 = Collect_Bottom_Middle.isSelected();
+				autodata.Hopper5 = Collect_Bottom_Right.isSelected();
+				
+				autodata.C_Ground  = rdbtnCollectedFromGround.isSelected();
+				autodata.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
+				
+				autodata.G_Left = rdbtnLeftGear.isSelected();
+				autodata.G_Right = rdbtnRightGear.isSelected();
+				autodata.G_Middle = rdbtnMiddleGear.isSelected();
+				
+				data.Rope = rdbtnClimbedRope.isSelected();
+				autodata.Line = rdbtnCrossedLine.isSelected();
+				
+				autodata.Note = Nts.getText();
+				
+				}catch(Exception e1){System.out.println(e);}
+
+				H_Speed.setText(Double.toString(data.H_Speed));
+				H_Accuracy.setText(Double.toString(data.H_Accuracy));
+
+				L_Speed.setText(Double.toString(data.L_Speed));
+				L_Accuracy.setText(Double.toString(data.L_Accuracy));
+
+				Team.setText(Integer.toString(data.Team_Number));
+				Match.setText(Integer.toString(data.Match_Number));
+
+				Gear_Input.setText(Integer.toString(data.G_Input));
+				Gear_Placement.setText(Integer.toString(data.G_Placement));
+
+				Acc.setText(Double.toString(data.C_Accuracy));
+				Cc.setText(Double.toString(data.C_Carry));
+
+				H_Amount.setText(Integer.toString(data.H_Amount));
+				L_Amount.setText(Integer.toString(data.L_Amount));
+
+				Collect_Top_Right.setSelected(data.Hopper1);
+				Collect_Top_Left.setSelected(data.Hopper2);
+				Collect_Bottom_Left.setSelected(data.Hopper3);
+				Collect_Bottom_Middle.setSelected(data.Hopper4);
+				Collect_Bottom_Right.setSelected(data.Hopper5);
+
+				rdbtnCollectedFromGround.setSelected(data.C_Ground);
+				rdbtnCollectedFromHoppers.setSelected(data.C_Hoppers);
+
+				rdbtnLeftGear.setSelected(data.G_Left);
+				rdbtnRightGear.setSelected(data.G_Right);
+				rdbtnMiddleGear.setSelected(data.G_Middle);
+				rdbtnClimbedRope.setSelected(data.Rope);
+
+				Nts.setText(data.Note);
+			
+			} else {
+				mode = true;
+				Mode.setText("Auto");
+				
+				try{
+					
+					//input ---------------------------------------------------------------
+					data.H_Speed = Double.parseDouble(H_Speed.getText());
+					data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
+
+					data.L_Speed = Double.parseDouble(L_Speed.getText());
+					data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
+					
+					data.Team_Number = Integer.parseInt(Team.getText());
+					data.Match_Number = Integer.parseInt(Match.getText());
+					
+					data.G_Input = Integer.parseInt(Gear_Input.getText());
+					data.G_Placement = Integer.parseInt(Gear_Placement.getText());
+					
+					data.H_Amount = Integer.parseInt(H_Amount.getText());
+					data.L_Amount = Integer.parseInt(L_Amount.getText());
+					
+					data.C_Accuracy = Double.parseDouble(Acc.getText());
+					data.C_Carry = Double.parseDouble(Cc.getText());
+					
+					data.Hopper1 = Collect_Top_Left.isSelected();
+					data.Hopper2 = Collect_Top_Right.isSelected();
+					data.Hopper3 = Collect_Bottom_Left.isSelected();
+					data.Hopper4 = Collect_Bottom_Middle.isSelected();
+					data.Hopper5 = Collect_Bottom_Right.isSelected();
+					
+					data.C_Ground  = rdbtnCollectedFromGround.isSelected();
+					data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
+					
+					data.G_Left = rdbtnLeftGear.isSelected();
+					data.G_Right = rdbtnRightGear.isSelected();
+					data.G_Middle = rdbtnMiddleGear.isSelected();
+					
+					data.Rope = rdbtnClimbedRope.isSelected();
+					
+					data.Note = Nts.getText();
+					
+					}catch(Exception e1){System.out.println(e);}
+				
+				H_Speed.setText(Double.toString(autodata.H_Speed));
+				H_Accuracy.setText(Double.toString(autodata.H_Accuracy));
+				
+				L_Speed.setText(Double.toString(autodata.L_Speed));
+				L_Accuracy.setText(Double.toString(autodata.L_Accuracy));
+				
+				Team.setText(Integer.toString(data.Team_Number));
+				Match.setText(Integer.toString(data.Match_Number));
+				
+				Gear_Input.setText(Integer.toString(autodata.G_Input));
+				Gear_Placement.setText(Integer.toString(autodata.G_Placement));
+				
+				Acc.setText(Double.toString(autodata.C_Accuracy));
+				Cc.setText(Double.toString(autodata.C_Carry));
+				
+				H_Amount.setText(Integer.toString(autodata.H_Amount));
+				L_Amount.setText(Integer.toString(autodata.L_Amount));
+				
+				Collect_Top_Right.setSelected(autodata.Hopper1);
+				Collect_Top_Left.setSelected(autodata.Hopper2);
+				Collect_Bottom_Left.setSelected(autodata.Hopper3);
+				Collect_Bottom_Middle.setSelected(autodata.Hopper4);
+				Collect_Bottom_Right.setSelected(autodata.Hopper5);
+				
+				rdbtnCollectedFromGround.setSelected(autodata.C_Ground);
+				rdbtnCollectedFromHoppers.setSelected(autodata.C_Hoppers);
+				rdbtnCrossedLine.setSelected(autodata.Line);
+				
+				rdbtnLeftGear.setSelected(autodata.G_Left);
+				rdbtnRightGear.setSelected(autodata.G_Right);
+				rdbtnMiddleGear.setSelected(autodata.G_Middle);
+				rdbtnClimbedRope.setSelected(data.Rope);
+				
+				Nts.setText(autodata.Note);
+				
+			}
+				
+			}
+		});
+		btnMode.setBounds(147, 311, 125, 29);
+		frame.getContentPane().add(btnMode);
+		
+		Mode = new JTextField();
+		Mode.setEditable(false);
+		Mode.setBounds(5, 312, 130, 26);
+		frame.getContentPane().add(Mode);
+		Mode.setColumns(10);
+		
+		rdbtnCrossedLine = new JRadioButton("Crossed Line");
+		rdbtnCrossedLine.setBounds(399, 450, 141, 23);
+		frame.getContentPane().add(rdbtnCrossedLine);
 		
 		}	
 }

@@ -1,4 +1,4 @@
-public class Data implements java.io.Serializable {
+public class Data{
 	
 double C_Accuracy;
 double C_Carry;	
@@ -33,6 +33,7 @@ boolean Hopper4 = false; //bottom middle
 boolean Hopper5 = false; //bottom right
 
 String Note;
+
 
 
 }
