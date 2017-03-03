@@ -1,10 +1,15 @@
 import java.awt.EventQueue;
 import java.awt.Image;
+import java.awt.Window;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JDialog;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JRadioButton;
@@ -889,6 +894,11 @@ public static void main(String[] args) {
 		btnUpload.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				if(data.Team_Number==0||data.Match_Number==0){
+				Checker_Page cp = new Checker_Page();
+				cp.main(null);
+				}else{
+				
 				Home_Page.modelViewStats.data.add(data);
 				System.out.println("Yay!!!!!! data");
 				System.out.println(data.Team_Number);
@@ -899,6 +909,7 @@ public static void main(String[] args) {
 				
 				time.stop();
 				frame.dispose();
+				}
 			}
 		});
 		btnUpload.setBounds(645, 311, 117, 29);
