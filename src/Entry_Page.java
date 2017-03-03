@@ -78,7 +78,6 @@ public static void main(String[] args) {
 	static JLabel lblCollection_1;
 	static JLabel lblAccuracy_2;
 	static JLabel lblNotes_1;
-	static JButton Upload;
 	static JLabel lblHighGoal_1;
 	static JLabel lblLowGoal_1;
 	static JLabel lblHighGoal_2;
@@ -467,28 +466,6 @@ public static void main(String[] args) {
 				catch (InterruptedException e) {e.printStackTrace();}
 				Timer_Secound.setText(Integer.toString(count4));
 				count4 --;}}};
-		
-		Upload = new JButton("Upload");
-		Upload.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			
-						
-						
-						Home_Page.modelViewStats.data.add(data);
-						System.out.println("Yay!!!!!! data");
-						System.out.println(data.Team_Number);
-						
-						Home_Page.modelViewStats.autodata.add(autodata);
-						System.out.println("Yay!!!!!! autodata");
-						System.out.println(autodata.Hopper3);
-						
-						//time.stop();
-						//frame.dispose();
-						
-			}
-		});
-		Upload.setBounds(647, 311, 117, 29);
-		frame.getContentPane().add(Upload);
 		
 		lblHighGoal_1 = new JLabel("High Goal:");
 		lblHighGoal_1.setForeground(Color.YELLOW);
@@ -907,6 +884,25 @@ public static void main(String[] args) {
 		rdbtnCrossedLine = new JRadioButton("Crossed Line");
 		rdbtnCrossedLine.setBounds(399, 450, 141, 23);
 		frame.getContentPane().add(rdbtnCrossedLine);
+		
+		JButton btnUpload = new JButton("Upload");
+		btnUpload.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Home_Page.modelViewStats.data.add(data);
+				System.out.println("Yay!!!!!! data");
+				System.out.println(data.Team_Number);
+				
+				Home_Page.modelViewStats.autodata.add(autodata);
+				System.out.println("Yay!!!!!! autodata");
+				System.out.println(autodata.Hopper3);
+				
+				time.stop();
+				frame.dispose();
+			}
+		});
+		btnUpload.setBounds(645, 311, 117, 29);
+		frame.getContentPane().add(btnUpload);
 		
 		}	
 }
