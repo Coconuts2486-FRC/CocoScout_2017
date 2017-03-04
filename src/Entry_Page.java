@@ -17,6 +17,8 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class Entry_Page {
 
@@ -365,6 +367,13 @@ public static void main(String[] args) {
 		frame.getContentPane().add(lblTeam);
 		
 		Team = new JTextField();
+		Team.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				data.Team_Number = Integer.parseInt(Team.getText());
+				data.Match_Number = Integer.parseInt(Match.getText());
+			}
+		});
 		Team.setBounds(634, 370, 130, 26);
 		frame.getContentPane().add(Team);
 		Team.setColumns(10);
@@ -374,6 +383,13 @@ public static void main(String[] args) {
 		frame.getContentPane().add(lblRound);
 		
 		Match = new JTextField();
+		Match.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				data.Team_Number = Integer.parseInt(Team.getText());
+				data.Match_Number = Integer.parseInt(Match.getText());
+			}
+		});
 		Match.setBounds(634, 396, 130, 26);
 		frame.getContentPane().add(Match);
 		Match.setColumns(10);
@@ -520,8 +536,8 @@ public static void main(String[] args) {
 		
 		JLabel icon = new JLabel("");
 		icon.setBounds(6, 6, 728, 308);
-		path="./Resources/Map.jpg";
-		ImageIcon myimage = new ImageIcon (path);
+		path="/Map.jpg";//./Resources
+		ImageIcon myimage = new ImageIcon (this.getClass().getResource(path));
 		Image img = myimage.getImage();
 		Image newImg = img.getScaledInstance(icon.getWidth(), icon.getHeight(), Image.SCALE_SMOOTH);
 		ImageIcon image = new ImageIcon(newImg);

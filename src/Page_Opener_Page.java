@@ -5,14 +5,17 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class Page_Opener_Page {
 
 	private JFrame frame;
+	private JTextField text;
 
-	/**
-	 * Launch the application.
-	 */
+	public static String x="null";
+
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -38,7 +41,7 @@ public class Page_Opener_Page {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 154, 103);
+		frame.setBounds(100, 100, 154, 113);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -57,10 +60,26 @@ public class Page_Opener_Page {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CSV csv = new CSV();
-				csv.WriteToFile(Home_Page.modelViewStats);
+				if (x.equals("null")){
+					Attention a = new Attention();
+					a.main(null);
+				}else{csv.WriteToFile(Home_Page.modelViewStats,x);}
 			}
 		});
-		btnNewButton.setBounds(6, 47, 140, 29);
+		btnNewButton.setBounds(6, 34, 140, 29);
 		frame.getContentPane().add(btnNewButton);
+		
+	
+		
+		text = new JTextField();
+		text.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				x=text.getText();
+			}
+		});
+		text.setBounds(6, 61, 140, 26);
+		frame.getContentPane().add(text);
+		text.setColumns(10);
 	}
 }

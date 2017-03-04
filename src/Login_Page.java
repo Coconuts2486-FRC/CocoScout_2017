@@ -45,25 +45,25 @@ public class Login_Page {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 770, 377);
+		frame.setBounds(100, 100, 206, 240);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblCoconutsScouting = new JLabel("Coconuts Scouting");
 		lblCoconutsScouting.setFont(new Font("Apple Chancery", Font.PLAIN, 25));
 		lblCoconutsScouting.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCoconutsScouting.setBounds(6, 6, 758, 40);
+		lblCoconutsScouting.setBounds(6, 6, 191, 40);
 		frame.getContentPane().add(lblCoconutsScouting);
 		
 		passwordField = new JPasswordField();
 		passwordField.setHorizontalAlignment(SwingConstants.CENTER);
-		passwordField.setBounds(6, 243, 758, 40);
+		passwordField.setBounds(6, 105, 191, 40);
 		frame.getContentPane().add(passwordField);
 		
 		lblPassword = new JLabel("Password:");
 		lblPassword.setFont(new Font("Apple Chancery", Font.PLAIN, 20));
 		lblPassword.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPassword.setBounds(6, 191, 758, 40);
+		lblPassword.setBounds(6, 69, 191, 40);
 		frame.getContentPane().add(lblPassword);
 		
 		btnLogin = new JButton("Login");
@@ -81,7 +81,7 @@ public class Login_Page {
 		}
 		});
 		btnLogin.setFont(new Font("Apple Chancery", Font.PLAIN, 30));
-		btnLogin.setBounds(6, 295, 758, 56);
+		btnLogin.setBounds(6, 157, 191, 56);
 		frame.getContentPane().add(btnLogin);
 	}
 }

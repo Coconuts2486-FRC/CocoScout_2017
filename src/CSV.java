@@ -3,9 +3,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class CSV {
-	public void WriteToFile(Model_View_Stats stats){
-		WriteToFile(stats, System.getProperty("user.dir") + "\\output.csv", true);
+	
+	public void WriteToFile(Model_View_Stats stats, String x){
+		
+		WriteToFile(stats, System.getProperty("user.dir") + "//"+x+".csv", true);
 	}
+	
 	public void WriteToFile(Model_View_Stats stats, String directory, Boolean columnHeaders){
 		try
 		{
