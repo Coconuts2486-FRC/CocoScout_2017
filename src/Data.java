@@ -9,6 +9,8 @@ double H_Accuracy;
 double L_Speed;
 double L_Accuracy;
 
+double defence;
+
 int G_Input;
 int G_Placement;
 

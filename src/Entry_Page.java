@@ -1,14 +1,11 @@
 import java.awt.EventQueue;
 import java.awt.Image;
-import java.awt.Window;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import javax.swing.JDialog;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -113,6 +110,7 @@ public static void main(String[] args) {
 	private JButton btnMode;
 	private JTextField Mode;
 	private JRadioButton rdbtnCrossedLine;
+	private JTextField D_Field;
 	private void initialize() {
 		data = new Data();
 		autodata = new Auto_Data();
@@ -534,26 +532,6 @@ public static void main(String[] args) {
 		label_1.setBounds(424, 189, 61, 16);
 		frame.getContentPane().add(label_1);
 		
-		JLabel icon = new JLabel("");
-		icon.setBounds(6, 6, 728, 308);
-		path="/Map.jpg";//./Resources
-		ImageIcon myimage = new ImageIcon (this.getClass().getResource(path));
-		Image img = myimage.getImage();
-		Image newImg = img.getScaledInstance(icon.getWidth(), icon.getHeight(), Image.SCALE_SMOOTH);
-		ImageIcon image = new ImageIcon(newImg);
-		icon.setIcon(image);
-		frame.getContentPane().add(icon);
-		
-		JButton Info = new JButton("Info");
-		Info.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-		Info_Page ip = new Info_Page();
-		ip.main(null);
-			}
-		});
-		Info.setBounds(537, 311, 117, 29);
-		frame.getContentPane().add(Info);
-		
 		
 				
 				//Mode >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -611,6 +589,8 @@ public static void main(String[] args) {
 					H_Speed.setText(Double.toString(autodata.H_Speed));
 					H_Accuracy.setText(Double.toString(autodata.H_Accuracy));
 					
+					
+					
 					L_Speed.setText(Double.toString(autodata.L_Speed));
 					L_Accuracy.setText(Double.toString(autodata.L_Accuracy));
 					
@@ -645,7 +625,7 @@ public static void main(String[] args) {
 					time.start();
 						
 					}});
-		btnUpdate.setBounds(427, 311, 117, 29);
+		btnUpdate.setBounds(315, 125, 115, 50);
 		frame.getContentPane().add(btnUpdate);
 		
 		
@@ -700,11 +680,11 @@ public static void main(String[] args) {
 				frame.dispose();
 			}
 		});
-		btnClose.setBounds(317, 311, 117, 29);
+		btnClose.setBounds(516, 312, 117, 29);
 		frame.getContentPane().add(btnClose);
 		
 		rdbtnClimbedRope = new JRadioButton("Climbed Rope");
-		rdbtnClimbedRope.setBounds(275, 450, 141, 23);
+		rdbtnClimbedRope.setBounds(275, 450, 119, 23);
 		frame.getContentPane().add(rdbtnClimbedRope);
 		
 		rdbtnLeftGear = new JRadioButton("Left Gear");
@@ -778,6 +758,8 @@ public static void main(String[] args) {
 
 				H_Speed.setText(Double.toString(data.H_Speed));
 				H_Accuracy.setText(Double.toString(data.H_Accuracy));
+				
+				D_Field.setText(Double.toString(data.defence));
 
 				L_Speed.setText(Double.toString(data.L_Speed));
 				L_Accuracy.setText(Double.toString(data.L_Accuracy));
@@ -819,6 +801,9 @@ public static void main(String[] args) {
 					//input ---------------------------------------------------------------
 					data.H_Speed = Double.parseDouble(H_Speed.getText());
 					data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
+					
+					data.defence = Double.parseDouble(D_Field.getText());
+					
 
 					data.L_Speed = Double.parseDouble(L_Speed.getText());
 					data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
@@ -856,6 +841,9 @@ public static void main(String[] args) {
 				
 				H_Speed.setText(Double.toString(autodata.H_Speed));
 				H_Accuracy.setText(Double.toString(autodata.H_Accuracy));
+				
+				
+				
 				
 				L_Speed.setText(Double.toString(autodata.L_Speed));
 				L_Accuracy.setText(Double.toString(autodata.L_Accuracy));
@@ -903,12 +891,105 @@ public static void main(String[] args) {
 		Mode.setColumns(10);
 		
 		rdbtnCrossedLine = new JRadioButton("Crossed Line");
-		rdbtnCrossedLine.setBounds(399, 450, 141, 23);
+		rdbtnCrossedLine.setBounds(399, 450, 115, 23);
 		frame.getContentPane().add(rdbtnCrossedLine);
 		
 		JButton btnUpload = new JButton("Upload");
 		btnUpload.addActionListener(new ActionListener() {
+			@SuppressWarnings({ "static-access", "deprecation" })
 			public void actionPerformed(ActionEvent e) {
+				
+				
+				if (mode==true){
+				try{
+					
+					//input ---------------------------------------------------------------
+					autodata.H_Speed = Double.parseDouble(H_Speed.getText());
+					autodata.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
+
+					autodata.L_Speed = Double.parseDouble(L_Speed.getText());
+					autodata.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
+					
+					data.Team_Number = Integer.parseInt(Team.getText());
+					data.Match_Number = Integer.parseInt(Match.getText());
+					
+					autodata.G_Input = Integer.parseInt(Gear_Input.getText());
+					autodata.G_Placement = Integer.parseInt(Gear_Placement.getText());
+					
+					autodata.H_Amount = Integer.parseInt(H_Amount.getText());
+					autodata.L_Amount = Integer.parseInt(L_Amount.getText());
+					
+					autodata.C_Accuracy = Double.parseDouble(Acc.getText());
+					autodata.C_Carry = Double.parseDouble(Cc.getText());
+					
+					autodata.Hopper1 = Collect_Top_Left.isSelected();
+					autodata.Hopper2 = Collect_Top_Right.isSelected();
+					autodata.Hopper3 = Collect_Bottom_Left.isSelected();
+					autodata.Hopper4 = Collect_Bottom_Middle.isSelected();
+					autodata.Hopper5 = Collect_Bottom_Right.isSelected();
+					
+					autodata.C_Ground  = rdbtnCollectedFromGround.isSelected();
+					autodata.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
+					
+					autodata.G_Left = rdbtnLeftGear.isSelected();
+					autodata.G_Right = rdbtnRightGear.isSelected();
+					autodata.G_Middle = rdbtnMiddleGear.isSelected();
+					
+					data.Rope = rdbtnClimbedRope.isSelected();
+					autodata.Line = rdbtnCrossedLine.isSelected();
+					
+					autodata.Note = Nts.getText();
+					
+					}catch(Exception e1){System.out.println(e);}	
+				}else{
+					try{
+						
+						//input ---------------------------------------------------------------
+						data.H_Speed = Double.parseDouble(H_Speed.getText());
+						data.H_Accuracy = Double.parseDouble(H_Accuracy.getText());
+						
+						data.defence = Double.parseDouble(D_Field.getText());
+						
+
+						data.L_Speed = Double.parseDouble(L_Speed.getText());
+						data.L_Accuracy = Double.parseDouble(L_Accuracy.getText());
+						
+						data.Team_Number = Integer.parseInt(Team.getText());
+						data.Match_Number = Integer.parseInt(Match.getText());
+						
+						data.G_Input = Integer.parseInt(Gear_Input.getText());
+						data.G_Placement = Integer.parseInt(Gear_Placement.getText());
+						
+						data.H_Amount = Integer.parseInt(H_Amount.getText());
+						data.L_Amount = Integer.parseInt(L_Amount.getText());
+						
+						data.C_Accuracy = Double.parseDouble(Acc.getText());
+						data.C_Carry = Double.parseDouble(Cc.getText());
+						
+						data.Hopper1 = Collect_Top_Left.isSelected();
+						data.Hopper2 = Collect_Top_Right.isSelected();
+						data.Hopper3 = Collect_Bottom_Left.isSelected();
+						data.Hopper4 = Collect_Bottom_Middle.isSelected();
+						data.Hopper5 = Collect_Bottom_Right.isSelected();
+						
+						data.C_Ground  = rdbtnCollectedFromGround.isSelected();
+						data.C_Hoppers = rdbtnCollectedFromHoppers.isSelected();
+						
+						data.G_Left = rdbtnLeftGear.isSelected();
+						data.G_Right = rdbtnRightGear.isSelected();
+						data.G_Middle = rdbtnMiddleGear.isSelected();
+						
+						data.Rope = rdbtnClimbedRope.isSelected();
+						
+						data.Note = Nts.getText();
+						
+						}catch(Exception e1){System.out.println(e);}
+				}
+				
+				
+				
+				
+				
 				
 				if(data.Team_Number==0||data.Match_Number==0){
 				Checker_Page cp = new Checker_Page();
@@ -930,6 +1011,25 @@ public static void main(String[] args) {
 		});
 		btnUpload.setBounds(645, 311, 117, 29);
 		frame.getContentPane().add(btnUpload);
+		
+		D_Field = new JTextField();
+		D_Field.setBounds(634, 450, 130, 26);
+		frame.getContentPane().add(D_Field);
+		D_Field.setColumns(10);
+		
+		JLabel lblDefenceLevel = new JLabel("Defence Level:");
+		lblDefenceLevel.setBounds(520, 450, 98, 16);
+		frame.getContentPane().add(lblDefenceLevel);
+		
+		JLabel icon = new JLabel("");
+		icon.setBounds(6, 6, 728, 308);
+		path="/Map.jpg";//./Resources
+		ImageIcon myimage = new ImageIcon (this.getClass().getResource(path));
+		Image img = myimage.getImage();
+		Image newImg = img.getScaledInstance(icon.getWidth(), icon.getHeight(), Image.SCALE_SMOOTH);
+		ImageIcon image = new ImageIcon(newImg);
+		icon.setIcon(image);
+		frame.getContentPane().add(icon);
 		
 		}	
 }

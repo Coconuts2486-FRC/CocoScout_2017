@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import javax.swing.JLabel;
 
 public class Page_Opener_Page {
 
@@ -41,7 +42,7 @@ public class Page_Opener_Page {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 154, 113);
+		frame.setBounds(100, 100, 273, 196);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -60,10 +61,13 @@ public class Page_Opener_Page {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CSV csv = new CSV();
+				//String pass = Password_Maker.pas();
+				String time = dat.mai();
+				
 				if (x.equals("null")){
 					Attention a = new Attention();
 					a.main(null);
-				}else{csv.WriteToFile(Home_Page.modelViewStats,x);}
+				}else{csv.WriteToFile(Home_Page.modelViewStats,x,time);}
 			}
 		});
 		btnNewButton.setBounds(6, 34, 140, 29);
@@ -81,5 +85,13 @@ public class Page_Opener_Page {
 		text.setBounds(6, 61, 140, 26);
 		frame.getContentPane().add(text);
 		text.setColumns(10);
+		
+		JLabel lblMakeSureTo = new JLabel("Make sure to enter in file name correctly");
+		lblMakeSureTo.setBounds(6, 99, 254, 16);
+		frame.getContentPane().add(lblMakeSureTo);
+		
+		JLabel lblExample = new JLabel("Example: AZ-Ruby");
+		lblExample.setBounds(6, 127, 254, 16);
+		frame.getContentPane().add(lblExample);
 	}
 }
